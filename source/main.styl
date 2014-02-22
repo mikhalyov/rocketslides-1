@@ -1,0 +1,305 @@
+@import "nib"
+global-reset()
+
+debug = false
+
+placeholder()
+  &::-webkit-input-placeholder
+    {block}
+  &:-moz-placeholder
+    {block}
+  &::-moz-placeholder
+    {block}
+  &:-ms-input-placeholder
+    {block}
+
+body
+  font-family "proxima-nova", sans-serif
+  font-smoothing antialiased
+  min-width 998px
+
+$button
+  display inline-block
+  padding 8px 14px
+  border 1px solid rgb(253, 169, 1)
+  border-radius 5px
+  background linear-gradient( to top, rgb(255,126,0) 0%, rgb(255,192,0) 100%)
+  box-shadow 0px 3px #954a09
+  color #000
+  font-weight 700
+  text-shadow 1px 1px rgba(#ffed63, 0.47)
+  cursor pointer
+  user-select none
+  font-size 15px
+  text-align center
+  text-decoration none
+  outline none
+  &:hover
+    background linear-gradient( to top, rgb(255,192,0) 0%, rgb(255,234,0) 100%)
+    border-color rgb(255,234,0)
+  &:active
+    background linear-gradient( to top, rgb(255,156,0) 0%, rgb(220,135,0) 100%)
+    border-color rgb(220,135,0)
+
+.wrap
+  width 998px
+  margin 0 auto
+  position relative
+  if debug
+    border-left 1px solid green
+    border-right 1px solid green
+
+#header
+  background #000
+  .wrap
+    display flex
+    justify-content space-between
+    align-items center
+  a
+    color #bebebe
+    text-decoration none
+    text-transform uppercase
+    font-size 12px
+    &:nth-of-type(n+2)
+      margin-left 28px
+    &.active
+      color #fff
+  nav
+    position relative
+    top 5px
+  .contact
+    margin-right 34px
+    display flex
+    align-items stretch
+    flex-direction column
+    color #fff
+    .phone
+      font-size 19px
+      font-weight 700
+      margin-bottom 16px
+    .order-call
+      @extend $button
+
+#logo
+  background url("images/logo.png")
+  width 257px
+  height 90px
+  margin 25px 0 25px 34px
+
+
+#macbook
+  background embedurl("images/zigzag.png") repeat-x bottom, url("images/macbook.jpg") no-repeat center
+  background-color #171a1e
+  .wrap
+    height 578px
+    text-align center
+  .title
+    color white
+    text-shadow 1px 2px rgba(0, 0, 0, 0.4)
+    padding-top 130px
+    padding-bottom 96px
+  h1
+    font-size 52px
+    font-weight 700
+    text-transform uppercase
+    margin-bottom 16px
+  h2
+    font-size 36px
+  .order
+    @extend $button
+    font-size 28px
+    line-height 28px
+    padding 26px 46px
+    border-radius 10px
+
+
+#info
+  text-align center
+  strong
+    font-weight 700
+  .title
+    margin-top 96px
+    font-size 60px
+  ul
+    display flex
+    justify-content space-between
+    padding 120px 88px
+    h2
+      font-size 90px
+      font-weight 700
+    small
+      font-size 50px
+    li:last-of-type small:before
+      width 28px
+      height 32px
+      position absolute
+      margin-top 7px
+      background embedurl("images/fire.png")
+      content " "
+    h3
+      font-size 20px
+
+
+#clients
+  border-top 2px solid #cbcbcb
+  background #e7e7e7
+  min-height 300px
+  ul
+    padding 64px 120px
+  li
+    text-align center
+  a
+    display inline-block
+    margin 10px 20px
+    vertical-align middle
+
+
+#portfolio
+  background url("images/portfolio.jpg") center
+  .wrap
+    height 800px
+    box-sizing border-box
+    padding 136px 70px 0 122px
+  h1
+    font-size 60px
+    font-weight 700
+    text-shadow 1px 2px rgba(0, 0, 0, 0.4)
+    color white
+    text-align center
+    margin-bottom 90px
+  ul
+    list-style-type image
+    list-style-image embedurl("images/list-item.png")
+    color #ffc700
+    font-size 20px
+    text-shadow 1px 1px rgba(0, 0, 0, 0.6)
+    font-weight 600
+    line-height 22px
+    position absolute
+  li
+    margin-bottom 36px
+  form
+    position absolute
+    right 60px
+    background #e7e7e7
+    border-radius 4px
+    width 372px
+    box-sizing border-box
+    padding 32px 36px
+    text-align center
+    h3
+      font-weight 600
+      text-shadow 1px 1px rgba(255, 255, 255, 0.7)
+      font-size 20px
+      margin-bottom 10px
+    input[type="text"], input[type="email"]
+      width 86%
+      display inline-block
+      outline none
+      text-align center
+      font-size 18px
+      font-family "proxima-nova"
+      font-weight 300
+      box-shadow inset 1px 1px 4px rgba(0, 0, 0, 0.5)
+      border 3px solid #ffcc00
+      padding 7px 0
+      margin-top 10px
+      +placeholder()
+        color #7f7f7f
+      &:focus
+        +placeholder()
+          color rgba(0, 0, 0, 0)
+      &[name="phone"]
+        +placeholder()
+          letter-spacing 1px
+    [type="submit"]
+      @extend $button
+      margin-top 16px
+      padding 12px 16px
+    p
+      margin-top 14px
+      font-size 15px
+      font-weight 600
+      color #717171
+      text-shadow 1px 0 rgba(255, 255, 255, 0.5)
+      a
+        display inline-block
+        height 18px
+        color #0092b6
+        text-decoration none
+        background embedurl("images/underline.png") repeat-x left bottom
+
+
+#result
+  box-sizing border-box
+  background white
+  text-align center
+  padding-top 130px
+  box-shadow inset 0px 7px 7px -7px #000
+  h1
+    font-size 60px
+    font-weight 700
+    margin-bottom 22px
+  h3
+    font-size 30px
+    font-weight 300
+  ul
+    padding 64px 50px 136px 50px
+    display flex
+    justify-content space-between
+  li
+    padding-top 130px
+    background-repeat no-repeat
+    background-position top center
+    width 250px
+    &.diving
+      background-image url("images/diveinto.png")
+    &.structure
+      background-image url("images/sellingstructure.png")
+    &.design
+      background-image url("images/smartdesign.png")
+    h4
+      font-size 21px
+      font-weight 600
+      margin-bottom 18px
+    p
+      font-weight 300
+      font-size 14px
+      line-height 18px
+
+
+#improve
+  background url("images/aurora.jpg") no-repeat center
+  .wrap
+    text-align center
+    height 300px
+    box-sizing border-box
+    padding-top 56px
+  h1
+    font-size 30px
+    font-weight 600
+    color #fff
+    text-shadow 1px 1px 0px rgba(0, 0, 0, 0.5)
+    margin-bottom 32px
+  h3
+    font-size 21px
+    font-weight 600
+    text-shadow 0px 1px 0px rgba(255, 255, 255, 0.2)
+    margin-bottom 36px
+  .send
+    @extend $button
+    padding 18px 24px
+
+
+#reviews
+  .wrap
+    padding-top 100px
+  h1
+    font-size 60px
+    font-weight 700
+    text-align center
+    margin-bottom 28px
+  h3
+    font-size 30px
+    font-weight 300
+    text-align center

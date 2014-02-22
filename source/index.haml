@@ -1,0 +1,101 @@
+<!doctype html>
+%html( lang="ru" )
+  %head
+    %meta( charset="utf-8" )
+    %meta( name="viewport" content="width=640, initial-scale=1.0, user-scalable=no" )
+    %title RocketSlides
+    %link( rel="stylesheet" href="main.css" )
+    %script( src="http//use.typekit.net/wsx3qoh.js" )
+    :javascript
+      try{Typekit.load();}catch(e){}
+  %body
+    #header
+      .wrap
+        #logo
+        %nav
+          %a.active( href="#" ) Портфолио
+          %a( href="#" ) Технологии
+          %a( href="#" ) Цены
+        .contact
+          .phone +7 499 456-23-46
+          .order-call Заказать звонок
+    #macbook
+      .wrap
+        .title
+          %h1 Продающие презентации
+          %h2 «Под ключ». Профессионально. В срок.
+        .order Заказать презентацию
+    #info
+      .wrap
+        .title
+          %strong Rocketslides
+          — это:
+        %ul
+          %li
+            %h2 95
+            %h3 успешных<br>проектов
+          %li
+            %h2 40 <small>млн</small>
+            %h3 привлеченного дохода<br>для клиентов
+          %li
+            %h2 5 <small>дней</small>
+            %h3 средний срок<br>создания презентации
+    #clients
+      .wrap
+        %ul
+          %li
+            %a( href="#" data-client="smart-wall" )
+            %a( href="#" data-client="scandinavia" )
+            %a( href="#" data-client="sun-school" )
+            %a( href="#" data-client="bright-box" )
+            %a( href="#" data-client="webcreds" )
+            %a( href="#" data-client="free" )
+            %a( href="#" data-client="exante" )
+            %a( href="#" data-client="mosrektorg" )
+    #portfolio
+      .wrap
+        %h1 Портфолио
+        %ul
+          %li Продающие презентации<br>для отправки по имейл
+          %li Презентации для публичных<br>выступлений
+          %li Презентации для инвесторов<br>и маркетинг-киты
+          %li Корпоративные шаблоны<br>презентаций
+        %form
+          %h3 Получите презентацию c&nbsp;нашими с лучшими кейсами
+          %input( required="required" type="text" name="name" placeholder="Ваше имя" )
+          %input( required="required" type="email" name="email" placeholder="email@yourdomain.com" )
+          %input( required="required" type="text" name="phone" placeholder="+7 (___) ___-__-__" )
+          %input( type="submit" value="Получить портфолио" )
+          %p
+            или
+            %a( href="#" ) заказать звонок
+    #result
+      .wrap
+        %h1 Результат неизбежен
+        %h3 Как мы делаем презентации продающими
+        %ul
+          %li.diving
+            %h4 Погружение<br>в бизнес
+            %p
+              Презентации должны четко решать свою бизнес-задачу — именно поэтому мы тщательно изучаем то, как работает ваш бизнес, чтобы говорить в презентации «на языке» клиента.
+          %li.structure
+            %h4 Продающая<br>структура
+            %p
+              Сценарии наших презентаций создаются профессиональным режиссером, и их качество сразу же выделят вас на фоне конкурентов и будут такими же интересными, как просмотр боевика!
+          %li.design
+            %h4 Продуманный<br>дизайн
+            %p
+              В дизайн наших презентаций закладывается обучающая методология, знания которой направлены на запоминание и быстрое усвоение ваших сообщений.
+    #improve
+      .wrap
+        %h1 Не знаете, что можно улучшить<br>в ваших презентациях?
+        %h3 Отправьте их к нам на бесплатный аудит!
+        %a.send( href="mailto:audit@rocketslides.ru") Отправить файл на e-mail
+    #reviews
+      .wrap
+        %h1 Отзывы клиентов
+        %h3 Здесь о том, что клиентов много и они довольны
+
+    %script( src="http//code.jquery.com/jquery-2.1.0.min.js" )
+    %script( src="main.js" )
+
