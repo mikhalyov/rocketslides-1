@@ -334,6 +334,7 @@ body
     font-size 14px
     border-bottom 1px solid rgba(#0092b6, 0.2)
     line-height 16px
+    margin-bottom 8px
   .person
     padding 42px 0
     background-repeat no-repeat
@@ -360,3 +361,65 @@ body
     width 8px
     height 8px
     background #585858
+
+
+#services
+  border-top 2px solid #cbcbcb
+  background #e7e7e7
+  text-align center
+  font-size 0
+  .wrap
+    padding-top 80px
+  h1
+    font-size 60px
+    font-weight 700
+    text-shadow 0px 1px #fff
+    margin-bottom 80px
+  li
+    width 380px
+    height 390px
+    box-sizing border-box
+    padding 144px 20px 20px 20px
+    display inline-block
+    background-color white
+    background-repeat no-repeat
+    background-position top
+    &.selling
+      background-image url("images/services/selling.jpg")
+    &.corporate
+      background-image url("images/services/corporate.jpg")
+    &.public
+      background-image url("images/services/public.jpg")
+    &.trainings
+      background-image url("images/services/trainings.jpg")
+    &:nth-child(2n)
+      margin-left 60px
+    &:nth-child(n+3)
+      margin-top 70px
+  h3
+    font-size 21px
+    font-weight 700
+    margin-bottom 30px
+  h4
+    font-size 21px
+    font-weight 600
+    margin-bottom 18px
+    strong
+      font-weight 700
+      font-size 40px
+      color #ffba00
+  .presentation
+    @extend $button
+    padding 18px 28px
+  p
+    margin-top 14px
+    font-size 15px
+    font-weight 600
+    color #717171
+    text-shadow 1px 0 rgba(255, 255, 255, 0.5)
+    a
+      display inline-block
+      height 18px
+      color #0092b6
+      text-decoration none
+      background embedurl("images/underline.png") repeat-x left bottom
