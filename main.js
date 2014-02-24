@@ -30,18 +30,4 @@
     });
   });
 
-  $("input").each(function() {
-    if (this.getAttribute("required")) {
-      this.oninvalid = function(e) {
-        e.target.setCustomValidity("");
-        if (!e.target.validity.valid) {
-          return e.target.setCustomValidity("Обязательное поле");
-        }
-      };
-      return this.oninput = function(e) {
-        return e.target.setCustomValidity("");
-      };
-    }
-  });
-
 }).call(this);
