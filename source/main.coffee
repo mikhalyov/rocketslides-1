@@ -21,11 +21,11 @@ $("#reviews ol li").each ->
     $(slide).nextAll().removeClass("left").addClass("right")
     $(slide).removeClass("left").removeClass("right")
 
-$("input").each ->
-  if @getAttribute("required")
-    @oninvalid = (e) ->
-      e.target.setCustomValidity ""
-      unless e.target.validity.valid
-        e.target.setCustomValidity "Обязательное поле"
-    @oninput = (e) ->
-      e.target.setCustomValidity ""
+# $("input").each ->
+#   if @getAttribute("required")
+#     @oninvalid = (e) ->
+#       e.target.setCustomValidity ""
+#       unless e.target.validity.valid
+#         e.target.setCustomValidity "Обязательное поле"
+#     @oninput = (e) ->
+#       e.target.setCustomValidity ""

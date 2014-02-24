@@ -80,9 +80,9 @@
           %li Корпоративные шаблоны<br>презентаций
         %form
           %h3 Получите презентацию c&nbsp;нашими с лучшими кейсами
-          %input( required="required" type="text" name="name" placeholder="Ваше имя" )
-          %input( required="required" type="email" name="email" placeholder="email@yourdomain.com" )
-          %input( required="required" type="text" name="phone" placeholder="+7 (___) ___-__-__" )
+          %input( type="text" name="name" placeholder="Ваше имя" )
+          %input( type="email" name="email" placeholder="email@yourdomain.com" )
+          %input( type="text" name="phone" placeholder="+7 (___) ___-__-__" )
           %input( type="submit" value="Получить портфолио" )
           %p
             или
@@ -176,6 +176,33 @@
             %p
               или
               %a( href="#" ) заказать звонок
+        %h2 Хотите добавить уникальности в ваши презентации?
+        .tech Мы готовы сделать для вас впечатляющую презентацию в любом<br>современном формате!
+    #team
+      .wrap
+        %h1 Команда
+        %p К каждому нашему проекту подключается режисер презентаций,<br>методолог, копирайтер и дизайнер.
+        %p В процесс влюблен каждый участник команды,<br>поэтому и результат получается идеальным!
+        %img( src="images/team2.jpg" )
+        .block
+          .info
+            .title На прямой связи с вами:
+            .phone +7 499 456-23-46
+            %a.email( href="mailto:launch@rocketslides.ru" ) launch@rocketslides.ru
+            .notice
+              Звонок вас ни к чему не обязывает,<br>
+              мы с удовольствием расскажем<br>
+              о наших проектах
+          %form
+            %h3 Остались вопросы или<br>хотите связаться с нами напрямую?
+            %p Воспользуйтесь контактной формой ниже
+            %input( type="text" name="name" placeholder="Ваше имя" )
+            %input( type="email" name="email" placeholder="email@yourdomain.com" )
+            %input( type="text" name="phone" placeholder="+7 (___) ___-__-__" )
+            %textarea( name="question" placeholder="Ваш вопрос или запрос на расчет стоимости" )
+            %input( type="submit" value="Отправить вопрос" )
+    #footer
+      .wrap 2012-2014 &copy; <strong>Rocketslides</strong> &mdash; Бюро презентаций
     %script( src="//code.jquery.com/jquery-2.1.0.min.js" )
     %script( src="//fotorama.s3.amazonaws.com/4.4.9/fotorama.js" )
     %script( src="main.js" )
