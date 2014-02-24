@@ -1,24 +1,25 @@
-loadImage = (url, callback) ->
-  img = document.createElement "img"
-  img.src = url
-  img.onload = ->
-    $(img).css("visibility", "hidden")
-    $(img).css("position", "absolute")
-    document.body.appendChild img
-    width = $(img).width()
-    height = $(img).height()
-    document.body.removeChild img
-    callback img, width, height
-
 $("#clients a").each ->
   a = $(@)
   url = "images/clients/#{a.data('client')}.png"
-  loadImage url, (_, width, height) ->
-    a.css
-      width: width
-      height: height
-      "background-image": "url(#{url})"
-    a.attr("data-client", null)
+  a.append "<img src='#{url}'>"
+  a.attr("data-client", null)
+
+$("#reviews ul li").each ->
+  li = $(@)
+  photoUrl = "images/reviews/#{li.data('client')}-photo.jpg"
+  logoUrl = "images/reviews/#{li.data('client')}-logo.png"
+  li.css("background-image", "url(#{photoUrl})")
+  li.find(".person").css("background-image", "url(#{logoUrl})")
+
+$("#reviews ol li").each ->
+  idx = $(@).index()
+  $(@).click ->
+    $(@).siblings().removeClass("active")
+    $(@).addClass("active")
+    slide = $("#reviews ul li").get(idx)
+    $(slide).prevAll().removeClass("right").addClass("left")
+    $(slide).nextAll().removeClass("left").addClass("right")
+    $(slide).removeClass("left").removeClass("right")
 
 $("input").each ->
   if @getAttribute("required")

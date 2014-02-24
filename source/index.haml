@@ -5,7 +5,8 @@
     %meta( name="viewport" content="width=640, initial-scale=1.0, user-scalable=no" )
     %title RocketSlides
     %link( rel="stylesheet" href="main.css" )
-    %script( src="http//use.typekit.net/wsx3qoh.js" )
+    %link( href="//fotorama.s3.amazonaws.com/4.4.9/fotorama.css" rel="stylesheet" )
+    %script( src="//use.typekit.net/wsx3qoh.js" )
     :javascript
       try{Typekit.load();}catch(e){}
   %body
@@ -42,7 +43,7 @@
             %h3 средний срок<br>создания презентации
     #clients
       .wrap
-        %ul
+        %ul.fotorama( data-width=998 data-autoplay=5000 data-click="false" data-loop="true" data-transitionduration=500 data-nav="no" )
           %li
             %a( href="#" data-client="smart-wall" )
             %a( href="#" data-client="scandinavia" )
@@ -52,6 +53,23 @@
             %a( href="#" data-client="free" )
             %a( href="#" data-client="exante" )
             %a( href="#" data-client="mosrektorg" )
+          %li
+            %a( href="#" data-client="scandinavia" )
+            %a( href="#" data-client="webcreds" )
+            %a( href="#" data-client="sun-school" )
+            %a( href="#" data-client="bright-box" )
+            %a( href="#" data-client="free" )
+            %a( href="#" data-client="exante" )
+            %a( href="#" data-client="mosrektorg" )
+          %li
+            %a( href="#" data-client="mosrektorg" )
+            %a( href="#" data-client="smart-wall" )
+            %a( href="#" data-client="sun-school" )
+            %a( href="#" data-client="scandinavia" )
+            %a( href="#" data-client="webcreds" )
+            %a( href="#" data-client="free" )
+            %a( href="#" data-client="bright-box" )
+            
     #portfolio
       .wrap
         %h1 Портфолио
@@ -95,7 +113,37 @@
       .wrap
         %h1 Отзывы клиентов
         %h3 Здесь о том, что клиентов много и они довольны
-
-    %script( src="http//code.jquery.com/jquery-2.1.0.min.js" )
+        %ul.fotorama( data-width=998 data-autoplay=5000 data-click="false" data-loop="true" data-transitionduration=500 )
+          %li( data-client="brightbox" )
+            .info
+              %blockquote
+                Презентации должны четко решать свою бизнес-задачу —&nbsp;именно поэтому мы тщательно изучаем то, как работает ваш бизнес, чтобы говорить в презентации «на языке» клиента. Презентации должны четко решать свою бизнес-задачу —&nbsp;именно поэтому мы тщательно изучаем то, как работает ваш бизнес, чтобы говорить в презентации «на языке» клиента.
+              .person
+                .name Имя Фамилия
+                .position
+                  Генеральный директор<br>
+                  Название компании
+              %a.watch( href="#" ) посмотреть работу
+          %li( data-client="brightbox" )
+            .info
+              %blockquote
+                Презентации должны четко решать свою бизнес-задачу —&nbsp;именно поэтому мы тщательно изучаем то, как работает ваш бизнес, чтобы говорить в презентации «на языке» клиента. Презентации должны четко решать свою бизнес-задачу —&nbsp;именно поэтому мы тщательно изучаем то, как работает ваш бизнес, чтобы говорить в презентации «на языке» клиента.
+              .person
+                .name Имя Фамилия
+                .position
+                  Генеральный директор<br>
+                  Название компании
+              %a.watch( href="#" ) посмотреть работу
+          %li( data-client="brightbox" )
+            .info
+              %blockquote
+                Презентации должны четко решать свою бизнес-задачу —&nbsp;именно поэтому мы тщательно изучаем то, как работает ваш бизнес, чтобы говорить в презентации «на языке» клиента. Презентации должны четко решать свою бизнес-задачу —&nbsp;именно поэтому мы тщательно изучаем то, как работает ваш бизнес, чтобы говорить в презентации «на языке» клиента.
+              .person
+                .name Имя Фамилия
+                .position
+                  Генеральный директор<br>
+                  Название компании
+              %a.watch( href="#" ) посмотреть работу
+    %script( src="//code.jquery.com/jquery-2.1.0.min.js" )
+    %script( src="//fotorama.s3.amazonaws.com/4.4.9/fotorama.js" )
     %script( src="main.js" )
-
