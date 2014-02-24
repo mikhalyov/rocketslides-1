@@ -105,7 +105,8 @@ body,
 #header .contact .order-call,
 #macbook .order,
 #portfolio form [type="submit"],
-#improve .send {
+#improve .send,
+#services .presentation {
   display: inline-block;
   padding: 8px 14px;
   border: 1px solid #fda901;
@@ -130,7 +131,8 @@ body,
 #header .contact .order-call:hover,
 #macbook .order:hover,
 #portfolio form [type="submit"]:hover,
-#improve .send:hover {
+#improve .send:hover,
+#services .presentation:hover {
   background: -webkit-linear-gradient(bottom, #ffc000 0%, #ffea00 100%);
   background: linear-gradient(to top, #ffc000 0%, #ffea00 100%);
   border-color: #ffea00;
@@ -139,7 +141,8 @@ body,
 #header .contact .order-call:active,
 #macbook .order:active,
 #portfolio form [type="submit"]:active,
-#improve .send:active {
+#improve .send:active,
+#services .presentation:active {
   background: -webkit-linear-gradient(bottom, #ff9c00 0%, #dc8700 100%);
   background: linear-gradient(to top, #ff9c00 0%, #dc8700 100%);
   border-color: #dc8700;
@@ -651,6 +654,7 @@ body {
   font-size: 14px;
   border-bottom: 1px solid rgba(0,146,182,0.2);
   line-height: 16px;
+  margin-bottom: 8px;
 }
 
 #reviews .person {
@@ -690,4 +694,96 @@ body {
   width: 8px;
   height: 8px;
   background: #585858;
+}
+
+#services {
+  border-top: 2px solid #cbcbcb;
+  background: #e7e7e7;
+  text-align: center;
+  font-size: 0;
+}
+
+#services .wrap {
+  padding-top: 80px;
+}
+
+#services h1 {
+  font-size: 60px;
+  font-weight: 700;
+  text-shadow: 0 1px #fff;
+  margin-bottom: 80px;
+}
+
+#services li {
+  width: 380px;
+  height: 390px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 144px 20px 20px 20px;
+  display: inline-block;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+#services li.selling {
+  background-image: url("images/services/selling.jpg");
+}
+
+#services li.corporate {
+  background-image: url("images/services/corporate.jpg");
+}
+
+#services li.public {
+  background-image: url("images/services/public.jpg");
+}
+
+#services li.trainings {
+  background-image: url("images/services/trainings.jpg");
+}
+
+#services li:nth-child(2n) {
+  margin-left: 60px;
+}
+
+#services li:nth-child(n+3) {
+  margin-top: 70px;
+}
+
+#services h3 {
+  font-size: 21px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+#services h4 {
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+#services h4 strong {
+  font-weight: 700;
+  font-size: 40px;
+  color: #ffba00;
+}
+
+#services .presentation {
+  padding: 18px 28px;
+}
+
+#services p {
+  margin-top: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #717171;
+  text-shadow: 1px 0 rgba(255,255,255,0.5);
+}
+
+#services p a {
+  display: inline-block;
+  height: 18px;
+  color: #0092b6;
+  text-decoration: none;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAADCAYAAABF//VLAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkE3NzMzRDYzOTNGQTExRTM5REU4QUEyQzlBN0YxMzkyIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkE3NzMzRDY0OTNGQTExRTM5REU4QUEyQzlBN0YxMzkyIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QTc3MzNENjE5M0ZBMTFFMzlERThBQTJDOUE3RjEzOTIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QTc3MzNENjI5M0ZBMTFFMzlERThBQTJDOUE3RjEzOTIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4JWIneAAAAPklEQVR42mJkmLTNmIGBYRUDKlj9P9ezAk2MgSlNR1YJSKNgD3lRUwYsgGWmo87VQgPF2yiCTIx7sSkGCDAAjRgLS+D4SnwAAAAASUVORK5CYII=") repeat-x left bottom;
 }
