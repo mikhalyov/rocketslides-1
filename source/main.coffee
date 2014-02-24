@@ -21,6 +21,14 @@ $("#reviews ol li").each ->
     $(slide).nextAll().removeClass("left").addClass("right")
     $(slide).removeClass("left").removeClass("right")
 
+$("a[href='#order-presentation']").click ->
+  $("#order").addClass("visible")
+  no
+
+$("#order .close").click ->
+  $("#order").removeClass("visible")
+  no
+
 # $("input").each ->
 #   if @getAttribute("required")
 #     @oninvalid = (e) ->

@@ -25,7 +25,7 @@
         .title
           %h1 Продающие презентации
           %h2 «Под ключ». Профессионально. В срок.
-        .order Заказать презентацию
+        %a.order( href="#order-presentation" ) Заказать презентацию
     #info
       .wrap
         .title
@@ -86,7 +86,7 @@
           %input( type="submit" value="Получить портфолио" )
           %p
             или
-            %a( href="#" ) заказать звонок
+            %a( href="#order-call" ) заказать звонок
     #result
       .wrap
         %h1 Результат неизбежен
@@ -151,31 +151,31 @@
           %li.selling
             %h3 Продающие презентации<br>и маркетинг-киты
             %h4 от <strong>25</strong> тыс. рублей
-            %a.presentation( href="#" ) Заказать презентацию
+            %a.presentation( href="#order-presentation" ) Заказать презентацию
             %p
               или
-              %a( href="#" ) заказать звонок
+              %a( href="#order-call" ) заказать звонок
           %li.public
             %h3 Презентации<br>для публичных выступлений
             %h4 от <strong>15</strong> тыс. рублей
-            %a.presentation( href="#" ) Заказать презентацию
+            %a.presentation( href="#order-presentation" ) Заказать презентацию
             %p
               или
-              %a( href="#" ) заказать звонок
+              %a( href="#order-call" ) заказать звонок
           %li.corporate
             %h3 Корпоративные шаблоны<br>презентаций
             %h4 от <strong>20</strong> тыс. рублей
-            %a.presentation( href="#" ) Заказать презентацию
+            %a.presentation( href="#order-presentation" ) Заказать презентацию
             %p
               или
-              %a( href="#" ) заказать звонок
+              %a( href="#order-call" ) заказать звонок
           %li.trainings
             %h3 Тренинги и мастер-классы<br>по мастерству презентаций
             %h4 от <strong>30</strong> тыс. рублей
-            %a.presentation( href="#" ) Заказать презентацию
+            %a.presentation( href="#order-presentation" ) Заказать презентацию
             %p
               или
-              %a( href="#" ) заказать звонок
+              %a( href="#order-call" ) заказать звонок
         %h2 Хотите добавить уникальности в ваши презентации?
         .tech Мы готовы сделать для вас впечатляющую презентацию в любом<br>современном формате!
     #team
@@ -203,6 +203,20 @@
             %input( type="submit" value="Отправить вопрос" )
     #footer
       .wrap 2012-2014 &copy; <strong>Rocketslides</strong> &mdash; Бюро презентаций
+    #order
+      .overlay
+        .inner
+          .close
+          .info
+            %p Мы свяжемся с вами<br>в течении рабочего дня
+            %p В целом создание<br>презентации занимает около<br><strong>5 рабочих дней</strong>
+            %p Если у вас возникли вопросы,<br>вы всегда можете позвонить нам<br><strong>+7 499 456-23-46</strong>
+          %form
+            %h3 Заказать презентацию
+            %input( type="text" name="name" placeholder="Ваше имя" )
+            %input( type="email" name="email" placeholder="email@yourdomain.com" )
+            %input( type="text" name="phone" placeholder="+7 (___) ___-__-__" )
+            %input( type="submit" value="Отправить заказ" )
     %script( src="//code.jquery.com/jquery-2.1.0.min.js" )
     %script( src="//fotorama.s3.amazonaws.com/4.4.9/fotorama.js" )
     %script( src="main.js" )
