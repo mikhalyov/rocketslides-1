@@ -30,4 +30,14 @@
     });
   });
 
+  $("a[href='#order-presentation']").click(function() {
+    $("#order").addClass("visible");
+    return false;
+  });
+
+  $("#order .close").click(function() {
+    $("#order").removeClass("visible");
+    return false;
+  });
+
 }).call(this);
