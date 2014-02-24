@@ -95,10 +95,11 @@ a img {
   border: none;
 }
 
-body {
+body,
+#portfolio form input[type="text"],
+#portfolio form input[type="email"] {
   font-family: "proxima-nova",sans-serif;
   -webkit-font-smoothing: antialiased;
-  min-width: 998px;
 }
 
 #header .contact .order-call,
@@ -142,6 +143,10 @@ body {
   background: -webkit-linear-gradient(bottom, #ff9c00 0%, #dc8700 100%);
   background: linear-gradient(to top, #ff9c00 0%, #dc8700 100%);
   border-color: #dc8700;
+}
+
+body {
+  min-width: 998px;
 }
 
 .wrap {
@@ -321,15 +326,11 @@ body {
 #clients {
   border-top: 2px solid #cbcbcb;
   background: #e7e7e7;
-  min-height: 300px;
-}
-
-#clients ul {
-  padding: 64px 120px;
 }
 
 #clients li {
   text-align: center;
+  padding: 64px 120px;
 }
 
 #clients a {
@@ -399,7 +400,6 @@ body {
   outline: none;
   text-align: center;
   font-size: 18px;
-  font-family: "proxima-nova";
   font-weight: 300;
   box-shadow: inset 1px 1px 4px rgba(0,0,0,0.5);
   border: 3px solid #fc0;
@@ -586,6 +586,11 @@ body {
   padding: 18px 24px;
 }
 
+#reviews {
+  overflow-x: hidden;
+  padding-bottom: 100px;
+}
+
 #reviews .wrap {
   padding-top: 100px;
 }
@@ -601,4 +606,88 @@ body {
   font-size: 30px;
   font-weight: 300;
   text-align: center;
+  margin-bottom: 80px;
+}
+
+#reviews ul {
+  padding-right: 80px;
+  margin-bottom: 24px;
+  height: 380px;
+  width: 998px;
+}
+
+#reviews ul li {
+  padding-left: 500px;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  height: 380px;
+  width: 918px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: end;
+  -moz-box-align: end;
+  -o-box-align: end;
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}
+
+#reviews .info {
+  padding-bottom: 42px;
+}
+
+#reviews .watch {
+  float: right;
+  color: #0092b6;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(0,146,182,0.2);
+  line-height: 16px;
+}
+
+#reviews .person {
+  padding: 42px 0;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+#reviews .person .name {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+#reviews .person .position {
+  color: #7c7c7c;
+  font-size: 12px;
+}
+
+#reviews blockquote {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+#reviews .fotorama__dot {
+  top: 22px;
+  width: 8px;
+  height: 8px;
+  border: none;
+  background: #d6d6d6;
+  -webkit-transition: background 0.5s;
+  transition: background 0.5s;
+}
+
+#reviews .fotorama__nav__frame.fotorama__active .fotorama__dot {
+  width: 8px;
+  height: 8px;
+  background: #585858;
 }
