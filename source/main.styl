@@ -48,6 +48,7 @@ a[href^=tel]
 body
   @extend $proxima-nova
   min-width page-width
+  padding-top 74px
 
 .wrap
   width page-width
@@ -86,7 +87,11 @@ input[type="text"], input[type="email"], textarea
 
 
 #header
+  position fixed
+  width 100%
+  top 0
   background #000
+  z-index 200
   .wrap
     display flex
     justify-content space-between
@@ -115,19 +120,28 @@ input[type="text"], input[type="email"], textarea
       margin-bottom 16px
     .order-call
       @extend $button
+  &.small
+    .phone
+      display none
 
 #logo
-  background url("images/logo.png")
+  background url("images/logo.png") no-repeat
   width 257px
   height 90px
   margin 25px 0 25px 34px
-
+  transition margin 0.5s, background 0.3s, height 0.5s
+  .small &
+    background-size auto 50px
+    height 50px
+    margin 12px 0 12px 34px
 
 #macbook
   background embedurl("images/zigzag.png") repeat-x bottom, url("images/macbook.jpg") no-repeat center
   background-color #171a1e
   .wrap
     height 578px
+    box-sizing border-box
+    padding-top 40px
     text-align center
   .title
     color white

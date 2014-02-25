@@ -32,13 +32,13 @@ module.exports = (grunt) ->
     watch:
       coffee:
         files: ["source/**/*.coffee"]
-        tasks: ["coffee"]
+        tasks: ["coffee", "uglify"]
         options:
           livereload: true
 
       stylus:
         files: ["source/**/*.styl"]
-        tasks: ["stylus", "autoprefixer"]
+        tasks: ["stylus", "autoprefixer", "cssmin"]
         options:
           livereload: true
 
@@ -140,9 +140,27 @@ module.exports = (grunt) ->
           namespace: "window.templates"
           bare: false
 
+    cssmin:
+      compile:
+        files:
+          "build/bundle.min.css": [
+            "build/main.css"
+          ]
+
+    uglify:
+      bundle:
+        options:
+          preserveComments: "some"
+        files:
+          "build/bundle.min.js": [
+            "build/mandrill.js"
+            "source/jquery.ba-throttle-debounce.js"
+            "build/main.js"
+          ]
+
   require("fs").readdirSync("node_modules").forEach (name) ->
     grunt.loadNpmTasks name  if /^grunt-/.test(name)
 
   grunt.registerTask "server", ["parallel:server"]
-  grunt.registerTask "build", ["copy", "imagemin", "stylus", "autoprefixer", "coffee", "haml"]
+  grunt.registerTask "build", ["copy", "imagemin", "stylus", "autoprefixer", "coffee", "haml", "uglify", "cssmin"]
   grunt.registerTask "default", ["clean", "build", "server"]

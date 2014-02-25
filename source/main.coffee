@@ -29,6 +29,40 @@ $("#order .close").click ->
   $("#order").removeClass("visible")
   no
 
+Mandrill = new mandrill.Mandrill("eryR6LS4JOYJiGZpkOjECw")
+
+sendMail = ({name, phone, email, message}, complete) ->
+
+  params =
+    template_name: "request_presentation"
+    template_content: [
+      {name: "name", content: name},
+      {name: "phone", content: phone},
+      {name: "email", content: email},
+      {name: "message", content: message}
+    ]
+    message:
+      to: [{email: "barbuzaster@gmail.com"}, {email: "launch@rocketslides.ru"}]
+
+  Mandrill.messages.sendTemplate params, ->
+    alert "Запрос отправлен!"
+    $("#order").removeClass("visible")
+    complete() if complete
+
+$("form").submit ->
+  name = $(@).find("[name='name']").val()
+  phone = $(@).find("[name='phone']").val()
+  email = $(@).find("[name='email']").val()
+  message = $(@).find("[name='message']").val()
+  sendMail {name, phone, email, message}
+  no
+
+$(window).scroll $.throttle 100, ->
+  if window.scrollY > 100
+    $("#header").addClass "small"
+  else
+    $("#header").removeClass "small"
+
 # $("input").each ->
 #   if @getAttribute("required")
 #     @oninvalid = (e) ->
