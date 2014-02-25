@@ -156,6 +156,7 @@ a[href^=tel] {
 
 body {
   min-width: 998px;
+  padding-top: 74px;
 }
 
 .wrap {
@@ -258,7 +259,11 @@ textarea[name="phone"]:-ms-input-placeholder {
 }
 
 #header {
+  position: fixed;
+  width: 100%;
+  top: 0;
   background: #000;
+  z-index: 200;
 }
 
 #header .wrap {
@@ -332,11 +337,23 @@ textarea[name="phone"]:-ms-input-placeholder {
   margin-bottom: 16px;
 }
 
+#header.small .phone {
+  display: none;
+}
+
 #logo {
-  background: url("images/logo.png");
+  background: url("images/logo.png") no-repeat;
   width: 257px;
   height: 90px;
   margin: 25px 0 25px 34px;
+  -webkit-transition: margin 0.5s, background 0.3s, height 0.5s;
+  transition: margin 0.5s, background 0.3s, height 0.5s;
+}
+
+.small #logo {
+  background-size: auto 50px;
+  height: 50px;
+  margin: 12px 0 12px 34px;
 }
 
 #macbook {
@@ -346,6 +363,9 @@ textarea[name="phone"]:-ms-input-placeholder {
 
 #macbook .wrap {
   height: 578px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-top: 40px;
   text-align: center;
 }
 
