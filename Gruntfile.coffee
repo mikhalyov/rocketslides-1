@@ -163,4 +163,4 @@ module.exports = (grunt) ->
 
   grunt.registerTask "server", ["parallel:server"]
   grunt.registerTask "build", ["copy", "stylus", "autoprefixer", "coffee", "haml", "uglify", "cssmin"]
-  grunt.registerTask "default", ["../rocketslides-html", "server"]
+  grunt.registerTask "default", ["build", "server"]
