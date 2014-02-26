@@ -2,7 +2,7 @@ module.exports = (grunt) ->
   "use strict"
   grunt.initConfig
     clean:
-      build: ["build"]
+      build: ["../rocketslides-html"]
 
     copy:
       static:
@@ -11,7 +11,7 @@ module.exports = (grunt) ->
           cwd: "source"
           matchBase: true
           src: ["*.*", "!*.styl", "!*.haml", "!*.coffee", "!*.jpg", "!*.jpeg", "!*.png"]
-          dest: "build"
+          dest: "../rocketslides-html"
           filter: "isFile"
         ]
 
@@ -26,7 +26,7 @@ module.exports = (grunt) ->
       server:
         options:
           port: 5678
-          base: "build"
+          base: "../rocketslides-html"
           keepalive: true
 
     watch:
@@ -71,7 +71,7 @@ module.exports = (grunt) ->
           cwd: "source"
           matchBase: true
           src: ["*.jpg", "*.jpeg", "*.png"]
-          dest: "build"
+          dest: "../rocketslides-html"
         ]
 
     coffee:
@@ -81,7 +81,7 @@ module.exports = (grunt) ->
           cwd: "source"
           matchBase: true
           src: ["*.coffee"]
-          dest: "build"
+          dest: "../rocketslides-html"
           ext: ".js"
         ]
 
@@ -94,7 +94,7 @@ module.exports = (grunt) ->
           cwd: "source"
           matchBase: true
           src: ["*.styl"]
-          dest: "build"
+          dest: "../rocketslides-html"
           ext: ".css"
         ]
 
@@ -106,9 +106,9 @@ module.exports = (grunt) ->
         files: [
           expand: true
           matchBase: true
-          cwd: "build"
+          cwd: "../rocketslides-html"
           src: "*.css"
-          dest: "build"
+          dest: "../rocketslides-html"
         ]
 
     haml:
@@ -118,7 +118,7 @@ module.exports = (grunt) ->
           cwd: "source"
           matchBase: true
           src: ["*.haml", "!templates/**/*.haml"]
-          dest: "build"
+          dest: "../rocketslides-html"
           ext: ".html"
         ]
         options:
@@ -131,7 +131,7 @@ module.exports = (grunt) ->
           cwd: "source/templates"
           matchBase: true
           src: "*.haml"
-          dest: "build/templates"
+          dest: "../rocketslides-html/templates"
           ext: ".js"
         ]
         options:
@@ -143,8 +143,8 @@ module.exports = (grunt) ->
     cssmin:
       compile:
         files:
-          "build/bundle.min.css": [
-            "build/main.css"
+          "../rocketslides-html/bundle.min.css": [
+            "../rocketslides-html/main.css"
           ]
 
     uglify:
@@ -152,15 +152,15 @@ module.exports = (grunt) ->
         options:
           preserveComments: "some"
         files:
-          "build/bundle.min.js": [
-            "build/mandrill.js"
+          "../rocketslides-html/bundle.min.js": [
+            "../rocketslides-html/mandrill.js"
             "source/jquery.ba-throttle-debounce.js"
-            "build/main.js"
+            "../rocketslides-html/main.js"
           ]
 
   require("fs").readdirSync("node_modules").forEach (name) ->
     grunt.loadNpmTasks name  if /^grunt-/.test(name)
 
   grunt.registerTask "server", ["parallel:server"]
-  grunt.registerTask "build", ["copy", "imagemin", "stylus", "autoprefixer", "coffee", "haml", "uglify", "cssmin"]
-  grunt.registerTask "default", ["clean", "build", "server"]
+  grunt.registerTask "../rocketslides-html", ["copy", "imagemin", "stylus", "autoprefixer", "coffee", "haml", "uglify", "cssmin"]
+  grunt.registerTask "default", ["../rocketslides-html", "server"]
