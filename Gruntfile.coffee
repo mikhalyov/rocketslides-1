@@ -10,7 +10,7 @@ module.exports = (grunt) ->
           expand: true
           cwd: "source"
           matchBase: true
-          src: ["*.*", "!*.styl", "!*.haml", "!*.coffee", "!*.jpg", "!*.jpeg", "!*.png"]
+          src: ["*.*", "!*.styl", "!*.haml", "!*.coffee"]
           dest: "../rocketslides-html"
           filter: "isFile"
         ]
@@ -162,5 +162,5 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks name  if /^grunt-/.test(name)
 
   grunt.registerTask "server", ["parallel:server"]
-  grunt.registerTask "../rocketslides-html", ["copy", "imagemin", "stylus", "autoprefixer", "coffee", "haml", "uglify", "cssmin"]
+  grunt.registerTask "../rocketslides-html", ["copy", "stylus", "autoprefixer", "coffee", "haml", "uglify", "cssmin"]
   grunt.registerTask "default", ["../rocketslides-html", "server"]
