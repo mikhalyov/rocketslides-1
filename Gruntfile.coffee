@@ -162,5 +162,5 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks name  if /^grunt-/.test(name)
 
   grunt.registerTask "server", ["parallel:server"]
-  grunt.registerTask "../rocketslides-html", ["copy", "stylus", "autoprefixer", "coffee", "haml", "uglify", "cssmin"]
+  grunt.registerTask "build", ["copy", "stylus", "autoprefixer", "coffee", "haml", "uglify", "cssmin"]
   grunt.registerTask "default", ["../rocketslides-html", "server"]
