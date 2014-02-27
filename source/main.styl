@@ -16,7 +16,8 @@ placeholder()
 
 $proxima-nova
   font-family "proxima-nova", sans-serif
-  font-smoothing antialiased
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+    font-smoothing antialiased
 
 $button
   display inline-block
