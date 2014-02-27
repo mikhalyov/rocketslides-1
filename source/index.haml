@@ -25,7 +25,7 @@
         .title
           %h1 Продающие презентации
           %h2 «Под ключ». Профессионально. В срок.
-        %a.order( href="#order-presentation" ) Заказать презентацию
+        %a.order( href="#order-presentation" data-name="первая кнопка" ) Заказать презентацию
     #info
       .wrap
         .title
@@ -83,7 +83,7 @@
           %input( type="text" name="name" placeholder="Ваше имя" )
           %input( type="email" name="email" placeholder="email@yourdomain.com" )
           %input( type="text" name="phone" placeholder="+7 (___) ___-__-__" )
-          %input( type="submit" value="Получить портфолио" )
+          %input( type="submit" value="Получить портфолио" data-name="портфолио" )
           %p
             или
             %a( href="#order-call" ) заказать звонок
@@ -151,28 +151,28 @@
           %li.selling
             %h3 Продающие презентации<br>и маркетинг-киты
             %h4 от <strong>25</strong> тыс. рублей
-            %a.presentation( href="#order-presentation" ) Заказать презентацию
+            %a.presentation( href="#order-presentation" data-name="продающие презентации" ) Заказать презентацию
             %p
               или
               %a( href="#order-call" ) заказать звонок
           %li.public
             %h3 Презентации<br>для публичных выступлений
             %h4 от <strong>15</strong> тыс. рублей
-            %a.presentation( href="#order-presentation" ) Заказать презентацию
+            %a.presentation( href="#order-presentation" data-name="публичные выступления" ) Заказать презентацию
             %p
               или
               %a( href="#order-call" ) заказать звонок
           %li.corporate
             %h3 Корпоративные шаблоны<br>презентаций
             %h4 от <strong>20</strong> тыс. рублей
-            %a.presentation( href="#order-presentation" ) Заказать презентацию
+            %a.presentation( href="#order-presentation" data-name="корпоративные шаблоны" ) Заказать презентацию
             %p
               или
               %a( href="#order-call" ) заказать звонок
           %li.trainings
             %h3 Тренинги и мастер-классы<br>по мастерству презентаций
             %h4 от <strong>30</strong> тыс. рублей
-            %a.presentation( href="#order-presentation" ) Заказать презентацию
+            %a.presentation( href="#order-presentation" data-name="тренинги" ) Заказать презентацию
             %p
               или
               %a( href="#order-call" ) заказать звонок
@@ -200,7 +200,7 @@
             %input( type="email" name="email" placeholder="email@yourdomain.com" )
             %input( type="text" name="phone" placeholder="+7 (___) ___-__-__" )
             %textarea( name="message" placeholder="Ваш вопрос или запрос на расчет стоимости" )
-            %input( type="submit" value="Отправить вопрос" )
+            %input( type="submit" value="Отправить вопрос" data-name="остались вопросы" )
     #footer
       .wrap 2012-2014 &copy; <strong>Rocketslides</strong> &mdash; Бюро презентаций
     #order

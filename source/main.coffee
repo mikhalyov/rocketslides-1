@@ -23,6 +23,7 @@ $("#reviews ol li").each ->
 
 $("a[href='#order-presentation']").click ->
   $("#order").addClass("visible")
+  $("#order [type=submit]").attr("data-name", $(@).data("name")).data("name", $(@).data("name"))
   no
 
 $("#order .close").click ->
@@ -31,7 +32,7 @@ $("#order .close").click ->
 
 Mandrill = new mandrill.Mandrill("eryR6LS4JOYJiGZpkOjECw")
 
-sendMail = ({name, phone, email, message}, complete) ->
+sendMail = ({name, phone, email, message, button}, complete) ->
 
   params =
     template_name: "request_presentation"
@@ -39,7 +40,8 @@ sendMail = ({name, phone, email, message}, complete) ->
       {name: "name", content: name},
       {name: "phone", content: phone},
       {name: "email", content: email},
-      {name: "message", content: message}
+      {name: "message", content: message},
+      {name: "button", content: button}
     ]
     message:
       to: [{email: "barbuzaster@gmail.com"}, {email: "launch@rocketslides.ru"}]
@@ -50,11 +52,12 @@ sendMail = ({name, phone, email, message}, complete) ->
     complete() if complete
 
 $("form").submit ->
-  name = $(@).find("[name='name']").val()
-  phone = $(@).find("[name='phone']").val()
-  email = $(@).find("[name='email']").val()
-  message = $(@).find("[name='message']").val()
-  sendMail {name, phone, email, message}
+  name = $(@).find("[name='name']").val() or ""
+  phone = $(@).find("[name='phone']").val() or ""
+  email = $(@).find("[name='email']").val() or ""
+  message = $(@).find("[name='message']").val() or ""
+  button = $(@).find("[data-name]").data("name") or ""
+  sendMail {name, phone, email, message, button}
   no
 
 $(window).scroll $.throttle 100, ->
