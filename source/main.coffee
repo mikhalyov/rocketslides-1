@@ -11,24 +11,26 @@ $("#reviews ul li").each ->
   li.css("background-image", "url(#{photoUrl})")
   li.find(".person").css("background-image", "url(#{logoUrl})")
 
-$("#reviews ol li").each ->
-  idx = $(@).index()
-  $(@).click ->
-    $(@).siblings().removeClass("active")
-    $(@).addClass("active")
-    slide = $("#reviews ul li").get(idx)
-    $(slide).prevAll().removeClass("right").addClass("left")
-    $(slide).nextAll().removeClass("left").addClass("right")
-    $(slide).removeClass("left").removeClass("right")
-
 $("a[href='#order-presentation']").click ->
   $("#order").addClass("visible")
-  $("#order [type=submit]").attr("data-name", $(@).data("name")).data("name", $(@).data("name"))
+  button = $(@).data("name")
+  $("#order [type=submit]").attr("data-name", button).data("name", button)
   no
 
 $("#order .close").click ->
   $("#order").removeClass("visible")
   no
+
+$("#header nav a").click ->
+  scrollTop = $($(@).attr("href")).offset().top
+  duration = Math.abs(window.scrollY - scrollTop)
+  $("html, body").bind "mousewheel DOMMouseScroll", -> no
+  $("html, body").animate {scrollTop},
+    duration: duration
+    complete: ->
+      $("html, body").unbind "mousewheel DOMMouseScroll"
+  no
+
 
 Mandrill = new mandrill.Mandrill("eryR6LS4JOYJiGZpkOjECw")
 
@@ -61,6 +63,14 @@ $("form").submit ->
   no
 
 $(window).scroll $.throttle 100, ->
+  found = null
+  $("#header nav a").each ->
+    if window.scrollY > $($(@).attr("href")).offset().top - 100
+      $(@).siblings().removeClass("active")
+      $(@).addClass("active")
+      found = true
+  unless found
+    $("#header nav a").removeClass("active")
   if window.scrollY > 100
     $("#header").addClass "small"
   else
