@@ -59,6 +59,48 @@ body
     border-left 1px solid green
     border-right 1px solid green
 
+.preload-image
+  position absolute
+  opacity 0.01
+  right 0px
+  bottom 0px
+  width 1px
+  height 1px
+
+form .done
+  display none
+
+form.submiting > *
+  visibility hidden
+
+form.submiting
+  background-image url("images/form-indicator.gif") !important
+  background-repeat no-repeat !important
+  background-position center !important
+
+form.submited > *
+  visibility hidden
+
+form.submited
+  position relative
+  .done
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    visibility visible
+    position absolute
+    top 0px
+    left 0px
+    right 0px
+    bottom 0px
+    h3
+      font-size 30px !important
+      margin-bottom 36px !important
+    p
+      font-weight 300 !important
+      font-size 20px !important
+      color black !important
 
 input[type="text"], input[type="email"], textarea
   width 86%
@@ -616,3 +658,9 @@ input[type="text"], input[type="email"], textarea
     box-sizing border-box
   input[type="submit"]
     width 250px
+  .close-popup
+    @extend $button
+    margin-top 36px
+    width 250px
+    padding 12px 16px
+

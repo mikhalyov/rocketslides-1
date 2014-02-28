@@ -87,6 +87,9 @@
           %p
             или
             %a( href="#order-call" ) заказать звонок
+          .done
+            %h3 Спасибо.<br>Ваш заказ принят.
+            %p Наш менеджер скоро<br>свяжется с Вами.
     #result
       .wrap
         %h1 Результат неизбежен
@@ -201,6 +204,9 @@
             %input( type="text" name="phone" placeholder="+7 (___) ___-__-__" )
             %textarea( name="message" placeholder="Ваш вопрос или запрос на расчет стоимости" )
             %input( type="submit" value="Отправить вопрос" data-name="остались вопросы" )
+            .done
+              %h3 Спасибо.<br>Ваш заказ принят.
+              %p Наш менеджер скоро<br>свяжется с Вами.
     #footer
       .wrap 2012-2014 &copy; <strong>Rocketslides</strong> &mdash; Бюро презентаций
     #order
@@ -217,6 +223,12 @@
             %input( type="email" name="email" placeholder="email@yourdomain.com" )
             %input( type="text" name="phone" placeholder="+7 (___) ___-__-__" )
             %input( type="submit" value="Отправить заказ" )
+            .done
+              %h3 Спасибо.<br>Ваш заказ принят.
+              %p Наш менеджер скоро<br>свяжется с Вами.
+              .close-popup Закрыть
+
     %script( src="//code.jquery.com/jquery-2.1.0.min.js" )
     %script( src="//fotorama.s3.amazonaws.com/4.4.9/fotorama.js" )
     %script( src="bundle.min.js" )
+    %img.preload-image( src="images/form-indicator.gif" )

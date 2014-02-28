@@ -17,8 +17,10 @@ $("a[href='#order-presentation']").click ->
   $("#order [type=submit]").attr("data-name", button).data("name", button)
   no
 
-$("#order .close").click ->
+$("#order .close, #order .close-popup").click ->
   $("#order").removeClass("visible")
+  $("#order form").removeClass("submited").removeClass("submiting")
+  $("#order form")[0].reset()
   no
 
 $("#header nav a").click ->
@@ -49,8 +51,6 @@ sendMail = ({name, phone, email, message, button}, complete) ->
       to: [{email: "barbuzaster@gmail.com"}, {email: "launch@rocketslides.ru"}]
 
   Mandrill.messages.sendTemplate params, ->
-    alert "Запрос отправлен!"
-    $("#order").removeClass("visible")
     complete() if complete
 
 $("form").submit ->
@@ -59,7 +59,12 @@ $("form").submit ->
   email = $(@).find("[name='email']").val() or ""
   message = $(@).find("[name='message']").val() or ""
   button = $(@).find("[data-name]").data("name") or ""
-  sendMail {name, phone, email, message, button}
+  $(@).addClass("submiting")
+  # setTimeout (=>
+  #   $(@).removeClass("submiting").addClass("submited")
+  # ), 2000
+  sendMail {name, phone, email, message, button}, =>
+    $(@).removeClass("submiting").addClass("submited")
   no
 
 $(window).scroll $.throttle 100, ->
