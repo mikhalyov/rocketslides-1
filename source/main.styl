@@ -587,8 +587,7 @@ input[type="text"], input[type="email"], textarea
       font-weight 700
       line-height 58px
 
-
-#order
+$popup-base
   display none
   &.visible
     display block
@@ -604,13 +603,13 @@ input[type="text"], input[type="email"], textarea
     align-items center
     z-index 300
   .inner
-    width 950px
     background #fff
     border-radius 4px
     box-shadow 0px 0px 3px rgba(black, 0.8)
     display flex
     justify-content stretch
     position relative
+    box-sizing border-box
   .close
     position absolute
     right 8px
@@ -620,9 +619,13 @@ input[type="text"], input[type="email"], textarea
     height 20px
     cursor pointer
     opacity 0.3
-    transition opacity 0.3s
     &:hover
       opacity 0.7
+
+#order
+  @extend $popup-base
+  .inner
+    width 950px
   .info
     width 416px
     display flex
@@ -664,3 +667,37 @@ input[type="text"], input[type="email"], textarea
     width 250px
     padding 12px 16px
 
+#callme
+  @extend $popup-base
+  .close
+    background-position top right
+    background-size 50%
+    right 12px
+    top 12px
+  .inner
+    position absolute
+    &:before
+      position absolute
+      top -20px
+      left calc(50% \- 15px)
+      background embedurl("images/callme-corner.png")
+      display block
+      width 29px
+      height 20px
+      content " "
+      font-size 1px
+    width 296px
+    padding 24px 12px 12px 12px
+    background #e7e7e7
+    text-align center
+    input[type="text"]
+      width 100%
+      box-sizing border-box
+  .done
+    h3
+      font-size 16px !important
+    p
+      font-size 14px !important
+    .close-popup
+      @extend $button
+      margin-top 24px

@@ -55,8 +55,8 @@ module.exports = (grunt) ->
           livereload: true
 
       imagemin:
-        files: ["source/**/*.jpg", "source/**/*.jpeg", "source/**/*.png"]
-        tasks: ["imagemin"]
+        files: ["source/**/*.jpg", "source/**/*.jpeg", "source/**/*.png", "source/**/*.gif"]
+        tasks: ["copy"]
         options:
           livereload: true
 

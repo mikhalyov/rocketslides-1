@@ -11,17 +11,35 @@ $("#reviews ul li").each ->
   li.css("background-image", "url(#{photoUrl})")
   li.find(".person").css("background-image", "url(#{logoUrl})")
 
-$("a[href='#order-presentation']").click ->
+$("[href='#order-presentation']").click ->
   $("#order").addClass("visible")
   button = $(@).data("name")
   $("#order [type=submit]").attr("data-name", button).data("name", button)
   no
 
-$("#order .close, #order .close-popup").click ->
-  $("#order").removeClass("visible")
-  $("#order form").removeClass("submited").removeClass("submiting")
-  $("#order form")[0].reset()
+$("[href='#order-call']").click ->
+  $("#callme").addClass("visible")
+  top = $(@).offset().top + $(@).height() + 35 - window.scrollY
+  left = $(@).offset().left + Math.ceil($(@).width() / 2)
+  $("#callme .inner").css({
+    top: top
+    left: left - Math.ceil($("#callme .inner").width() / 2)
+  });
+  scrollDelta = $(window).height() - top - $("#callme .inner").height() - 12 - 35
+  if scrollDelta < 0
+    $("html, body").animate({scrollTop: window.scrollY - scrollDelta}, 400)
+    $("#callme .inner").animate({top: top + scrollDelta}, 400)
+  button = $(@).data("name")
+  $("#callme [type=submit]").attr("data-name", button).data("name", button)
   no
+
+$("#callme .close, #callme .close-popup, #order .close, #order .close-popup").click ->
+  popup = $(@).parents("#callme, #order")
+  popup.removeClass("visible")
+  popup.find("form").removeClass("submited").removeClass("submiting")
+  popup.find("form")[0].reset()
+  no
+
 
 $("#header nav a").click ->
   scrollTop = $($(@).attr("href")).offset().top
