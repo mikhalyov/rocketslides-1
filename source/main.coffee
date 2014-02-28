@@ -21,11 +21,17 @@ $("[href='#order-call']").click ->
   $("#callme").addClass("visible")
   top = $(@).offset().top + $(@).height() + 35 - window.scrollY
   left = $(@).offset().left + Math.ceil($(@).width() / 2)
+  width_2 = Math.ceil($("#callme .inner").width() / 2)
+  left = left - width_2
+  if left + 2 * (width_2) > $(window).width() - 36
+    left = $(window).width() - width_2 * 2 - 36
   $("#callme .inner").css({
     top: top
-    left: left - Math.ceil($("#callme .inner").width() / 2)
+    left: left
   });
   scrollDelta = $(window).height() - top - $("#callme .inner").height() - 12 - 35
+  if /iPad/i.test(navigator.userAgent)
+    scrollDelta = scrollDelta - 350
   if scrollDelta < 0
     $("html, body").animate({scrollTop: window.scrollY - scrollDelta}, 400)
     $("#callme .inner").animate({top: top + scrollDelta}, 400)
