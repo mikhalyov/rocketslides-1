@@ -15,7 +15,7 @@ $("[href='#order-presentation']").click ->
   $("#order").addClass("visible")
   button = $(@).data("name")
   $("#order form h3").text($(@).text())
-  $("#order [type=submit]").attr("data-name", button).data("name", button)
+  $("#order [type=submit]").attr("data-name", button).data("name", button).data("event", $(@).data("event"))
   no
 
 $("[href='#order-call']").click ->
@@ -37,7 +37,7 @@ $("[href='#order-call']").click ->
     $("html, body").animate({scrollTop: window.scrollY - scrollDelta}, 400)
     $("#callme .inner").animate({top: top + scrollDelta}, 400)
   button = $(@).data("name")
-  $("#callme [type=submit]").attr("data-name", button).data("name", button)
+  $("#callme [type=submit]").attr("data-name", button).data("name", button).data("event", $(@).data("event"))
   no
 
 $("#callme .close, #callme .close-popup, #order .close, #order .close-popup").click ->
@@ -90,6 +90,11 @@ $("form").submit ->
   # ), 2000
   sendMail {name, phone, email, message, button}, =>
     $(@).removeClass("submiting").addClass("submited")
+    yandexEvent = $(@).find("[type='submit']").data("event")
+    if yandexEvent
+      try
+        yaCounter24179341.reachGoal(yandexEvent)
+      catch e
   no
 
 $(window).scroll $.throttle 100, ->
@@ -106,11 +111,11 @@ $(window).scroll $.throttle 100, ->
   else
     $("#header").removeClass "small"
 
-# $("input").each ->
-#   if @getAttribute("required")
-#     @oninvalid = (e) ->
-#       e.target.setCustomValidity ""
-#       unless e.target.validity.valid
-#         e.target.setCustomValidity "Обязательное поле"
-#     @oninput = (e) ->
-#       e.target.setCustomValidity ""
+$("input").each ->
+  if @getAttribute("required")
+    @oninvalid = (e) ->
+      e.target.setCustomValidity ""
+      unless e.target.validity.valid
+        e.target.setCustomValidity "Обязательное поле"
+    @oninput = (e) ->
+      e.target.setCustomValidity ""
