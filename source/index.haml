@@ -65,7 +65,7 @@
         %form
           %h3 Получите презентацию c&nbsp;нашими с лучшими кейсами
           %input( type="text" name="name" placeholder="Ваше имя" )
-          %input( type="email" name="email" placeholder="email@yourdomain.com" )
+          %input( type="email" name="email" placeholder="email@yourdomain.com" required="true" )
           %input( type="text" name="phone" placeholder="+7 (___) __-__-__" )
           %input( type="submit" value="Получить портфолио" data-name="портфолио" )
           %p
@@ -165,7 +165,7 @@
             %h3 Остались вопросы или<br>хотите связаться с нами напрямую?
             %p Воспользуйтесь контактной формой ниже
             %input( type="text" name="name" placeholder="Ваше имя" )
-            %input( type="email" name="email" placeholder="email@yourdomain.com" )
+            %input( type="email" name="email" placeholder="email@yourdomain.com" required="true" )
             %input( type="text" name="phone" placeholder="+7 (___) __-__-__" )
             %textarea( name="message" placeholder="Ваш вопрос или описание задачи на расчет стоимости" )
             %input( type="submit" value="Отправить вопрос" data-name="остались вопросы" )
@@ -185,7 +185,7 @@
           %form
             %h3 Заказать презентацию
             %input( type="text" name="name" placeholder="Ваше имя" )
-            %input( type="email" name="email" placeholder="email@yourdomain.com" )
+            %input( type="email" name="email" placeholder="email@yourdomain.com" required="true" )
             %input( type="text" name="phone" placeholder="+7 (___) __-__-__" )
             %input( type="submit" value="Отправить заявку" )
             .done
@@ -198,7 +198,7 @@
           .close
           %form
             %input( type="text" name="name" placeholder="Ваше имя" )
-            %input( type="text" name="phone" placeholder="+7 (___) ___-__-__" )
+            %input( type="text" name="phone" placeholder="+7 (___) ___-__-__" required="true" )
             %input( type="submit" value="Отправить" )
             .done
               %h3 Спасибо!<br>Ваш заказ принят.
