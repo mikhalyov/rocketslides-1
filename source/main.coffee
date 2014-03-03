@@ -70,7 +70,12 @@ sendMail = ({name, phone, email, message, button}, complete) ->
       {name: "phone", content: phone},
       {name: "email", content: email},
       {name: "message", content: message},
-      {name: "button", content: button}
+      {name: "button", content: button},
+      {name: "utm_source", content: $.url().param("utm_source")},
+      {name: "utm_medium", content: $.url().param("utm_medium")},
+      {name: "utm_term", content: $.url().param("utm_term")},
+      {name: "utm_content", content: $.url().param("utm_content")},
+      {name: "utm_campaign", content: $.url().param("utm_campaign")},
     ]
     message:
       to: [{email: "barbuzaster@gmail.com"}, {email: "launch@rocketslides.ru"}]

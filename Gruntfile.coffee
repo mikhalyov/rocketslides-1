@@ -155,6 +155,7 @@ module.exports = (grunt) ->
           "../rocketslides-html/bundle.min.js": [
             "../rocketslides-html/mandrill.js"
             "source/jquery.ba-throttle-debounce.js"
+            "source/purl.js"
             "../rocketslides-html/main.js"
           ]
 
