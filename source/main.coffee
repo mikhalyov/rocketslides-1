@@ -14,6 +14,7 @@ $("#reviews ul li").each ->
 $("[href='#order-presentation']").click ->
   $("#order").addClass("visible")
   button = $(@).data("name")
+  $("#order form h3").text($(@).text())
   $("#order [type=submit]").attr("data-name", button).data("name", button)
   no
 
