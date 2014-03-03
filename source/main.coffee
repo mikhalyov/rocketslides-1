@@ -1,3 +1,9 @@
+trackGoal = (yandexGoal) ->
+  if yandexGoal
+    try
+      yaCounter24179341.reachGoal(yandexGoal)
+    catch e
+
 $("#clients a").each ->
   a = $(@)
   url = "images/clients/#{a.data('client')}.png"
@@ -16,6 +22,8 @@ $("[href='#order-presentation']").click ->
   button = $(@).data("name")
   $("#order form h3").text($(@).text())
   $("#order [type=submit]").attr("data-name", button).data("name", button).data("event", $(@).data("event"))
+  if $(@).data("event")
+    trackGoal("open-" + $(@).data("event")) 
   no
 
 $("[href='#order-call']").click ->
@@ -38,6 +46,8 @@ $("[href='#order-call']").click ->
     $("#callme .inner").animate({top: top + scrollDelta}, 400)
   button = $(@).data("name")
   $("#callme [type=submit]").attr("data-name", button).data("name", button).data("event", $(@).data("event"))
+  if $(@).data("event")
+    trackGoal("open-" + $(@).data("event")) 
   no
 
 $("#callme .close, #callme .close-popup, #order .close, #order .close-popup").click ->
@@ -95,11 +105,7 @@ $("form").submit ->
   # ), 2000
   sendMail {name, phone, email, message, button}, =>
     $(@).removeClass("submiting").addClass("submited")
-    yandexEvent = $(@).find("[type='submit']").data("event")
-    if yandexEvent
-      try
-        yaCounter24179341.reachGoal(yandexEvent)
-      catch e
+    trackGoal $(@).find("[type='submit']").data("event")
   no
 
 $(window).scroll $.throttle 100, ->
