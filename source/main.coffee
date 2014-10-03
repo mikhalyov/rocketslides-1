@@ -96,7 +96,7 @@ sendMail = ({name, phone, email, message, button}, complete) ->
       {name: "utm_campaign", content: $.url().param("utm_campaign")},
     ]
     message:
-      to: [{email: "barbuzaster@gmail.com"}, {email: "launch@rocketslides.ru"}]
+      to: [{email: "barbuzaster@gmail.com"}, {email: "launch@rocketslides.ru"}, {email: "a.n.illarionov@rocketslides.ru"}]
 
   Mandrill.messages.sendTemplate params, ->
     complete() if complete
