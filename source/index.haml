@@ -15,7 +15,7 @@
         #logo
         %nav
           %a( href="#portfolio" ) Портфолио
-          %a( href="#result" ) Технологии
+          %a( href="#result" ) Методология
           %a( href="#services" ) Стоимость
         .contact
           .phone +7 499 215-31-40
@@ -23,23 +23,22 @@
     #macbook
       .wrap
         .title
-          %h1 Упакуем в презентацию <br>вашу идею, продукт, бизнес
-          %h2 Под ключ. Профессионально. Быстро.
+          %h1 Разработка под ключ<br>презентаций бизнес-класса
+          %h2 в PowerPoint, Keynote и Prezi
         %a.order( href="#order-presentation" data-name="первая кнопка" data-event="order-bigbutton" ) Заказать презентацию
     #info
       .wrap
         .title
-          %strong Rocketslides
-          — это:
+          %strong Бюро презентаций <br>Rocketslides — это:
         %ul
           %li
-            %h2 157
+            %h2 217
             %h3 успешных<br>проектов
           %li
-            %h2 85+ <small>млн</small>
+            %h2 114+ <small>млн руб.</small>
             %h3 привлеченного дохода<br>для клиентов
           %li
-            %h2 6 <small>дней</small>
+            %h2 5 <small>дней</small>
             %h3 средний срок<br>создания презентации
     #clients
       .wrap
@@ -65,19 +64,19 @@
         %form
           %h3 Получите презентацию c&nbsp;нашими с лучшими кейсами
           %input( type="text" name="name" placeholder="Ваше имя" required="true" )
-          %input( type="email" name="email" placeholder="email@yourdomain.com" required="true" )
+          %input( type="email" name="email" placeholder="Email" required="true" )
           %input( type="text" name="phone" placeholder="+7 (___) __-__-__" )
           %input( type="submit" value="Получить портфолио" data-name="портфолио" required="true" data-event="open-portfolio")
           %p
             или
-            %a( href="#order-call" data-name="из портфолио" ) закажите звонок
+            %a( href="#order-call" data-name="из портфолио" ) заказать звонок
           .done
             %h3 Спасибо!<br>Ваш заказ принят.
-            %p Наш менеджер скоро<br>свяжется с Вами.
+            %p Наш менеджер в течение часа<br>свяжется с Вами.
     #result
       .wrap
-        %h1 Результат неизбежен
-        %h3 Как мы делаем презентации продающими
+        %h1 Бизнес-результат неизбежен
+        %h3 Как мы делаем презентации эффективными
         %ul
           %li.diving
             %h4 Погружение<br>в бизнес
@@ -90,7 +89,7 @@
           %li.design
             %h4 Продуманный<br>дизайн
             %p
-              В проектировании дизайна информации на слайдах закладывается обучающая методология, работающая на запоминание и быстрое усвоение ключевых сообщений.
+              В проектировании дизайна информации на слайдах закладывается обучающая методология, работающая на быстрое считывание и усвоение ключевых сообщений.
     #improve
       .wrap
         %h1 Не знаете, что именно можно улучшить<br>в ваших презентациях?
@@ -122,30 +121,30 @@
             %a.presentation( href="#order-presentation" data-name="продающие презентации" ) Заказать презентацию
             %p
               или
-              %a( href="#order-call" ta-name="из продающих презентаций" ) закажите звонок
+              %a( href="#order-call" ta-name="из продающих презентаций" ) заказать звонок
           %li.public
             %h3 Презентации<br>для публичных выступлений
             %h4 от <strong>20</strong> тыс. рублей
             %a.presentation( href="#order-presentation" data-name="публичные выступления" ) Заказать презентацию
             %p
               или
-              %a( href="#order-call" data-name="из публичных выступлений" ) закажите звонок
+              %a( href="#order-call" data-name="из публичных выступлений" ) заказать звонок
           %li.corporate
             %h3 Корпоративные шаблоны<br>презентаций
             %h4 от <strong>40</strong> тыс. рублей
             %a.presentation( href="#order-presentation" data-name="корпоративные шаблоны" ) Заказать шаблон
             %p
               или
-              %a( href="#order-call" data-name="из корпоративных шаблонов" ) закажите звонок
+              %a( href="#order-call" data-name="из корпоративных шаблонов" ) заказать звонок
           %li.trainings
             %h3 Абонентское<br>обслуживание
             %h4 от <strong>80</strong> тыс. руб./мес.
             %a.presentation( href="#order-presentation" data-name="тренинги" ) Обсудить условия
             %p
               или
-              %a( href="#order-call" data-name="из тренингов" ) закажите звонок
-        %h2 Хотите добавить уникальности в ваши презентации?
-        .tech Мы готовы сделать для вас впечатляющую презентацию в любом<br>прогрессивном формате!
+              %a( href="#order-call" data-name="из тренингов" ) заказать звонок
+       -# %h2 Хотите добавить уникальности в ваши презентации?
+       -# .tech Мы готовы сделать для вас впечатляющую презентацию в любом<br>прогрессивном формате!
     #team
       .wrap
         %h1 Контакты
@@ -168,7 +167,7 @@
             %input( type="email" name="email" placeholder="email@yourdomain.com" required="true" )
             %input( type="text" name="phone" placeholder="+7 (___) __-__-__" required="true" )
             %textarea( name="message" placeholder="Ваш вопрос или описание задачи на расчет стоимости" )
-            %input( type="submit" value="Отправить вопрос" data-name="остались вопросы" )
+            %input( type="submit" value="Отправить сообщение" data-name="остались вопросы" )
             .done
               %h3 Спасибо!<br>Ваш заказ принят.
               %p Наш менеджер скоро<br>свяжется с Вами.
@@ -180,12 +179,12 @@
           .close
           .info
             %p Мы свяжемся с Вами<br>в течение <strong>3 часов</strong>
-            %p В целом создание<br>презентации занимает около<br><strong>5 рабочих дней</strong>
+            %p В целом создание<br>презентации занимает около<br><strong>6 рабочих дней</strong>
             %p Если у вас срочный запрос,<br>звоните сразу по телефону<br><strong>+7 499 215-31-40</strong>
           %form
             %h3 Заказать презентацию
             %input( type="text" name="name" placeholder="Ваше имя" required="true" )
-            %input( type="email" name="email" placeholder="email@yourdomain.com" required="true" )
+            %input( type="email" name="email" placeholder="Email" required="true" )
             %input( type="text" name="phone" placeholder="+7 (___) __-__-__" required="true" )
             %input( type="submit" value="Отправить заявку" )
             .done
