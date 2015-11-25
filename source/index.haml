@@ -40,18 +40,19 @@
           %li
             %h2 5 <small>дней</small>
             %h3 средний срок<br>создания презентации
-    #clients
-      .wrap
-        %ul.fotorama( data-width=998 data-autoplay=5000 data-click="false" data-loop="true" data-transitionduration=500 data-nav="no" )
-          %li
-            %a( href="#" data-client="smart-wall" )
-            %a( href="#" data-client="scandinavia" )
-            %a( href="#" data-client="sun-school" )
-            %a( href="#" data-client="bright-box" )
-            %a( href="#" data-client="webcreds" )
-            %a( href="#" data-client="free" )
-            %a( href="#" data-client="exante" )
-            %a( href="#" data-client="mosrektorg" )
+    
+    -# #clients
+    -#   .wrap
+    -#     %ul.fotorama( data-width=998 data-autoplay=5000 data-click="false" data-loop="true" data-transitionduration=500 data-nav="no" )
+    -#       %li
+    -#         %a( href="#" data-client="smart-wall" )
+    -#         %a( href="#" data-client="scandinavia" )
+    -#         %a( href="#" data-client="sun-school" )
+    -#         %a( href="#" data-client="bright-box" )
+    -#         %a( href="#" data-client="webcreds" )
+    -#         %a( href="#" data-client="free" )
+    -#         %a( href="#" data-client="exante" )
+    -#         %a( href="#" data-client="mosrektorg" )
             
     #portfolio
       .wrap
@@ -66,7 +67,7 @@
           %input( type="text" name="name" placeholder="Ваше имя" required="true" )
           %input( type="email" name="email" placeholder="Email" required="true" )
           %input( type="text" name="phone" placeholder="+7 (___) __-__-__" )
-          %input( type="submit" value="Получить портфолио" data-name="портфолио" required="true" data-event="open-portfolio" onlcick="_gaq.push(['_trackEvent', ‘portfolio’,’send’])" )
+          %input( type="submit" value="Получить портфолио" data-name="портфолио" required="true" data-event="open-portfolio" onlcick="ga('send', 'event', ‘portfolio’, request)" )
           %p
             или
             %a( href="#order-call" data-name="из портфолио" ) заказать звонок
