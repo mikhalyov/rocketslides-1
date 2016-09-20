@@ -23,7 +23,7 @@ $("[href='#order-presentation']").click ->
   $("#order form h3").text($(@).text())
   $("#order [type=submit]").attr("data-name", button).data("name", button).data("event", $(@).data("event"))
   if $(@).data("event")
-    trackGoal("open-" + $(@).data("event")) 
+    trackGoal("open-" + $(@).data("event"))
   no
 
 $("[href='#order-call']").click ->
@@ -47,7 +47,7 @@ $("[href='#order-call']").click ->
   button = $(@).data("name")
   $("#callme [type=submit]").attr("data-name", button).data("name", button).data("event", $(@).data("event"))
   if $(@).data("event")
-    trackGoal("open-" + $(@).data("event")) 
+    trackGoal("open-" + $(@).data("event"))
   no
 
 $("#callme .close, #callme .close-popup, #order .close, #order .close-popup").click ->
@@ -69,12 +69,12 @@ $("#header nav a").click ->
   no
 
 
-Mandrill = new mandrill.Mandrill("eryR6LS4JOYJiGZpkOjECw")
+Mandrill = new mandrill.Mandrill("_bFg4pRmNF1b0Jt3IN2K-Q")
 
 sendMail = ({name, phone, email, message, button}, complete) ->
 
   params =
-    template_name: "request_presentation"
+    template_name: "robot-rocketslides-email"
     template_content: [
       {name: "name", content: name},
       {name: "phone", content: phone},
