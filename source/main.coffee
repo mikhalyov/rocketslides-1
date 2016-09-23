@@ -96,6 +96,12 @@ sendMail = ({name, phone, email, message, button}, complete) ->
       {name: "utm_campaign", content: $.url().param("utm_campaign")},
     ]
     message:
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+      to: [{email: "launch@rocketslides.ru"}, {email: "vadmikhalyov+rngvlkjorugnojiw2me4@boards.trello.com"}]
+=======
+>>>>>>> Stashed changes
       to: [{email: "barbuzaster@gmail.com"}, {email: "launch@rocketslides.ru"}]
 
   welcome_params =
@@ -105,6 +111,10 @@ sendMail = ({name, phone, email, message, button}, complete) ->
     ]
     message:
       to: [{email: email}]
+<<<<<<< Updated upstream
+=======
+>>>>>>> origin/master
+>>>>>>> Stashed changes
 
   Mandrill.messages.sendTemplate params, ->
     if (email || '').length
