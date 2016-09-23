@@ -96,7 +96,7 @@ sendMail = ({name, phone, email, message, button}, complete) ->
       {name: "utm_campaign", content: $.url().param("utm_campaign")},
     ]
     message:
-      to: [{email: "barbuzaster@gmail.com"}, {email: "launch@rocketslides.ru"}]
+      to: [{email: "rocketslides@robot.zapier.com"}, {email: "launch@rocketslides.ru"}, {email: "vadmikhalyov+rngvlkjorugnojiw2me4@boards.trello.com"}]
 
   welcome_params =
     template_name: "welcome"
