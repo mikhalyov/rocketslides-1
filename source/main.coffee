@@ -96,10 +96,22 @@ sendMail = ({name, phone, email, message, button}, complete) ->
       {name: "utm_campaign", content: $.url().param("utm_campaign")},
     ]
     message:
-      to: [{email: "barbuzaster@gmail.com"}, {email: "launch@rocketslides.ru"}, {email: "a.n.illarionov@rocketslides.ru"}]
+      to: [{email: "barbuzaster@gmail.com"}, {email: "launch@rocketslides.ru"}]
+
+  welcome_params =
+    template_name: "welcome"
+    template_content: [
+      {name: "name", content: name}
+    ]
+    message:
+      to: [{email: email}]
 
   Mandrill.messages.sendTemplate params, ->
-    complete() if complete
+    if (email || '').length
+      Mandrill.messages.sendTemplate welcome_params, ->
+        complete() if complete
+    else:
+      complete() if complete
 
 $("form").submit ->
   name = $(@).find("[name='name']").val() or ""
