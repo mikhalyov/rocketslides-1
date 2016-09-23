@@ -67,10 +67,10 @@
           %input( type="text" name="name" placeholder="Ваше имя" required="true" )
           %input( type="email" name="email" placeholder="Email" required="true" )
           %input( type="text" name="phone" placeholder="+7 (___) __-__-__" )
-          %input( type="submit" value="Получить портфолио" data-name="портфолио" required="true" data-event="open-portfolio" onlcick="ga('send', 'event', ‘portfolio’, request);" )
+          %input( type="submit" value="Получить портфолио" data-name="портфолио" required="true" data-event="get-portfolio" )
           %p
             или
-            %a( href="#order-call" data-name="из портфолио" ) заказать звонок
+            %a( href="#order-call" data-name="из портфолио" data-event="callback-header" ) заказать звонок
           .done
             %h3 Спасибо!<br>Ваш заказ принят.
             %p Наш менеджер в течение часа<br>свяжется с Вами.
@@ -119,31 +119,31 @@
           %li.selling
             %h3 Продающие презентации<br>и маркетинг-киты
             %h4 от <strong>20</strong> тыс. рублей
-            %a.presentation( href="#order-presentation" data-name="продающие презентации" ) Заказать презентацию
+            %a.presentation( href="#order-presentation" data-name="продающие презентации" data-event="order-bigbutton" ) Заказать презентацию
             %p
               или
-              %a( href="#order-call" ta-name="из продающих презентаций" ) заказать звонок
+              %a( href="#order-call" ta-name="из продающих презентаций" data-event="callback-header" ) заказать звонок
           %li.public
             %h3 Презентации<br>для публичных выступлений
             %h4 от <strong>15</strong> тыс. рублей
-            %a.presentation( href="#order-presentation" data-name="публичные выступления" ) Заказать презентацию
+            %a.presentation( href="#order-presentation" data-name="публичные выступления" data-event="order-bigbutton" ) Заказать презентацию
             %p
               или
-              %a( href="#order-call" data-name="из публичных выступлений" ) заказать звонок
+              %a( href="#order-call" data-name="из публичных выступлений" data-event="callback-header" ) заказать звонок
           %li.corporate
             %h3 Корпоративные шаблоны<br>презентаций
             %h4 от <strong>30</strong> тыс. рублей
-            %a.presentation( href="#order-presentation" data-name="корпоративные шаблоны" ) Заказать шаблон
+            %a.presentation( href="#order-presentation" data-name="корпоративные шаблоны" data-event="order-template" ) Заказать шаблон
             %p
               или
-              %a( href="#order-call" data-name="из корпоративных шаблонов" ) заказать звонок
+              %a( href="#order-call" data-name="из корпоративных шаблонов" data-event="callback-header" ) заказать звонок
           %li.trainings
             %h3 Абонентское<br>обслуживание
             %h4 от <strong>50</strong> тыс. руб./мес.
-            %a.presentation( href="#order-presentation" data-name="тренинги" ) Обсудить условия
+            %a.presentation( href="#order-presentation" data-name="тренинги" data-event="order-terms" ) Обсудить условия
             %p
               или
-              %a( href="#order-call" data-name="из тренингов" ) заказать звонок
+              %a( href="#order-call" data-name="из тренингов" data-event="callback-header") заказать звонок
       -# %h2 Хотите добавить уникальности в ваши презентации?
       -#  .tech Мы готовы сделать для вас впечатляющую презентацию в любом<br>прогрессивном формате!
     #team
@@ -170,7 +170,7 @@
             %input( type="email" name="email" placeholder="Email" required="true" )
             %input( type="text" name="phone" placeholder="+7 (___) __-__-__" required="true" )
             %textarea( name="message" placeholder="Ваш вопрос или описание задачи на расчет стоимости" )
-            %input( type="submit" value="Отправить сообщение" data-name="остались вопросы" )
+            %input( type="submit" value="Отправить сообщение" data-name="остались вопросы" data-event="message" )
             .done
               %h3 Спасибо!<br>Ваш заказ принят.
               %p Наш менеджер скоро<br>свяжется с Вами.
@@ -189,7 +189,7 @@
             %input( type="text" name="name" placeholder="Ваше имя" required="true" )
             %input( type="email" name="email" placeholder="Email" required="true" )
             %input( type="text" name="phone" placeholder="+7 (___) __-__-__" required="true" )
-            %input( type="submit" value="Отправить заявку" )
+            %input( type="submit" value="Отправить заявку" data-event="send-request" )
             .done
               %h3 Спасибо.<br>Ваш заказ принят.
               %p Наш менеджер скоро<br>свяжется с Вами.
@@ -201,9 +201,9 @@
           %form
             %input( type="text" name="name" placeholder="Ваше имя" required="true" )
             %input( type="text" name="phone" placeholder="+7 (___) ___-__-__" required="true" )
-            %input( type="submit" value="Отправить заявку" )
+            %input( type="submit" value="Отправить заявку" data-event="send-call-request" )
             .done
-              %h3 Спасибо!<br>Ваш заказ принят.
+              %h3 Спасибо!<br>Ваш заказ на звонок принят.
               %p Наш менеджер скоро<br>свяжется с Вами.
               .close-popup Закрыть
     %script( src="//code.jquery.com/jquery-2.1.0.min.js" )
