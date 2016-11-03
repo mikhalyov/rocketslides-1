@@ -71,11 +71,14 @@ $("#header nav a").click ->
 
 Mandrill = new mandrill.Mandrill("_bFg4pRmNF1b0Jt3IN2K-Q")
 
-sendMail = ({name, phone, email, message, button}, complete) ->
-
+sendMail = ({name, type, reason, has_structure, when_, phone, email, message, button}, complete) ->
   params =
     template_name: "robot-rocketslides-email"
     template_content: [
+      {name: "type", content: type},
+      {name: "reason", content: reason},
+      {name: "has_structure", content: "has_structure"},
+      {name: "when", content: when_}
       {name: "name", content: name},
       {name: "phone", content: phone},
       {name: "email", content: email},
@@ -113,17 +116,27 @@ sendMail = ({name, phone, email, message, button}, complete) ->
     else:
       complete() if complete
 
+$("#id_has_phone_1").change ->
+  $('#id_phone_1').css { display: if $(@).is(':checked') then 'inline-block' else 'none' }
+
+$("#id_has_phone_2").change ->
+  $('#id_phone_2').css { display: if $(@).is(':checked') then 'inline-block' else 'none' }
+
 $("form").submit ->
   name = $(@).find("[name='name']").val() or ""
   phone = $(@).find("[name='phone']").val() or ""
   email = $(@).find("[name='email']").val() or ""
   message = $(@).find("[name='message']").val() or ""
   button = $(@).find("[data-name]").data("name") or ""
+  when_ = $(@).find("[name='when']").val() or ""
+  reason = $(@).find("[name='reason']").val() or ""
+  type = $(@).find("[name='type']").val() or ""
+  has_structure = $(@).find("[name='has_structure']").val() or ""
   $(@).addClass("submiting")
   # setTimeout (=>
   #   $(@).removeClass("submiting").addClass("submited")
   # ), 2000
-  sendMail {name, phone, email, message, button}, =>
+  sendMail {name, phone, email, message, button, when_, reason, type, has_structure}, =>
     $(@).removeClass("submiting").addClass("submited")
     trackGoal $(@).find("[type='submit']").data("event")
   no

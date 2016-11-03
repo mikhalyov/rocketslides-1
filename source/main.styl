@@ -102,7 +102,34 @@ form.submited
       font-size 20px !important
       color black !important
 
-input[type="text"], input[type="email"], textarea
+input[type="text"], input[type="email"], select
+  height 42px
+  background #fff
+
+select
+  text-align-last center
+
+label
+  display inline-flex
+  align-items center
+  margin 10px 0
+  text-align left
+  width 86%
+  color rgba(#000, 0.7)
+  user-select none
+
+label + label
+  margin-top 0
+
+label + input, label + select
+  margin-top 0 !important
+
+.checkbox-label
+  input
+    margin-right 8px
+
+input[type="text"], input[type="email"], textarea, select
+  box-sizing border-box
   width 86%
   display inline-block
   outline none
@@ -112,8 +139,8 @@ input[type="text"], input[type="email"], textarea
   font-weight 300
   box-shadow inset 1px 1px 4px rgba(0, 0, 0, 0.5)
   border 3px solid #ffcc00
-  padding 7px 0
   margin-top 10px
+  padding 7px 0
   resize none
   +placeholder()
     color #7f7f7f
@@ -251,14 +278,30 @@ input[type="text"], input[type="email"], textarea
   .wrap
     height 800px
     box-sizing border-box
-    padding 136px 70px 0 122px
+    padding 0 70px 0 122px
+    display flex
+    align-items stretch
+  .left
+    flex-grow 1
+    display flex
+    flex-direction column
+    padding-bottom 100px
+  .list-wrapper
+    flex-grow 1
+    display flex
+    align-items center
+  .form-wrapper
+    display flex
+    align-items center
+  form
+    width 50%
   h1
+    flex-grow 0
     font-size 60px
     font-weight 700
     text-shadow 1px 2px rgba(0, 0, 0, 0.4)
     color white
-    text-align center
-    margin-bottom 90px
+    margin-top 90px
   ul
     list-style-type image
     list-style-image embedurl("images/list-item.png")
@@ -267,15 +310,12 @@ input[type="text"], input[type="email"], textarea
     text-shadow 1px 1px rgba(0, 0, 0, 0.6)
     font-weight 600
     line-height 22px
-    position absolute
   li
     margin-bottom 36px
   form
-    position absolute
-    right 60px
     background #e7e7e7
     border-radius 4px
-    width 372px
+    width 400px
     box-sizing border-box
     padding 32px 36px
     text-align center
@@ -647,7 +687,7 @@ $popup-base
   form
     width 534px
     background #e7e7e7
-    padding 86px 0 64px 0
+    padding 24px 0 24px 0
     text-align center
     border-top-right-radius 4px
     border-bottom-right-radius 4px
@@ -656,8 +696,8 @@ $popup-base
       font-weight 700
       text-shadow 0px 1px rgba(255, 255, 255, 0.37)
       margin-bottom 36px
-  input
-    width 297px
+  input[type="text"], input[type="email"], textarea, select, label
+    width 282px
     box-sizing border-box
   input[type="submit"]
     width 250px
