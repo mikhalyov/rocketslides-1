@@ -25,8 +25,7 @@
         .title
           %h1 Создаём презентации<br>и шаблоны бизнес-класса
           %h2 в PowerPoint, Keynote и Prezi
-          %h2 срочно и на поддержке
-        %a.order( href="#order-presentation" data-name="первая кнопка" data-event="order-bigbutton" ) Заказать презентацию
+        %a.order( href="#order-presentation" data-name="первая кнопка" data-event="order-bigbutton" ) Рассчитать стоимость
     #info
       .wrap
         .title
@@ -50,29 +49,23 @@
             %ul
               %li Продающие презентации<br>для отправки по email
               %li Презентации для публичных<br>выступлений
-              %li Презентации для инвесторов<br>и маркетинг-киты
+              %li Питчи для инвесторов<br>
+              %li Маркетинг-киты для печати<br>
               %li Корпоративные шаблоны<br>презентаций
         .form-wrapper
           %form
-            %h3 Получите презентацию c&nbsp;нашими с лучшими кейсами
+            %h3 Получите по email наши лучшие работы по вашей задаче
 
             %label( for="id_type_1" ) Мне нужна
             %select( name="type" required="true" id="id_type_1" )
-              %option( value="Перезентация" ) Перезентация
-              %option( value="Шаблон PowerPoint" ) Шаблон PowerPoint
+              %option( value="Перезентация" ) Презентация
+              %option( value="Шаблон PowerPoint" ) Шаблон в PowerPoint
 
-            %label( for="id_reason_1" ) Для чего?
+            %label( for="id_reason_1" ) Для чего
             %input( type="text" name="reason" id="id_reason_1" required="true" value="для выступления" )
 
-            %label( for="id_when_1" ) Когда?
-            %input( type="text" name="when" id="id_when_1" required="true" value="к утру" )
-
-            %label( for="id_has_structure_1" class="checkbox-label" )
-              %input( type="checkbox" name="has_structure" id="id_has_structure_1" )
-              Структура презентации уже есть
-
-            %label( for="id_email_1" ) Email
-            %input( type="email" name="email" id="id_email_1" required="true" )
+            %label( for="id_email_1" ) Куда отправить работы
+            %input( type="email" name="email" id="id_email_1" required="true" placeholder="email@company.ru" )
 
             %label( for="id_has_phone_1" class="checkbox-label" )
               %input( type="checkbox" name="has_phone" id="id_has_phone_1" )
@@ -194,37 +187,37 @@
         .inner
           .close
           .info
-            %p Мы свяжемся с Вами<br>в течение <strong>5-7 минут</strong>
-            %p Если задача срочная,<br>презентацию делаем<br><strong>в течение 24 часов</strong>
+            %p Делаем расчет стоимости<br>проекта в течение<br><strong>30 минут</strong>
+            %p Если задача срочная,<br>срок разработки — <br><strong>от 12 часов</strong>
             %p Если у вас срочный запрос,<br>звоните сразу по телефону<br><strong>+7 964 624 65 23</strong>
           %form
-            %label( for="id_type_2" ) Мне нужна
-            %select( name="type" required="true" id="id_type_2" )
-              %option( value="Перезентация" ) Перезентация
-              %option( value="Шаблон PowerPoint" ) Шаблон PowerPoint
+            %label( for="id_type_1" ) Мне нужна
+            %select( name="type" required="true" id="id_type_1" )
+              %option( value="Перезентация" ) Презентация
+              %option( value="Шаблон PowerPoint" ) Шаблон в PowerPoint
 
-            %label( for="id_reason_2" ) Для чего?
-            %input( type="text" name="reason" id="id_reason_2" required="true" value="для выступления" )
+            %label( for="id_reason_1" ) Для чего
+            %input( type="text" name="reason" id="id_reason_1" required="true" value="для отправки по email" )
 
-            %label( for="id_when_2" ) Когда?
-            %input( type="text" name="when" id="id_when_2" required="true" value="к утру" )
+            %label( for="id_when_1" ) Когда
+            %input( type="text" name="when" id="id_when_1" required="true" value="к утру" )
 
-            %label( for="id_has_structure_2" class="checkbox-label" )
-              %input( type="checkbox" name="has_structure" id="id_has_structure_2" )
+            %label( for="id_email_1" ) Куда отправить смету
+            %input( type="email" name="email" id="id_email_1" required="true" placeholder="email@company.ru" )
+
+            %label( for="id_has_structure_1" class="checkbox-label" )
+              %input( type="checkbox" name="has_structure" id="id_has_structure_1" )
               Структура презентации уже есть
 
-            %label( for="id_email_2" ) Email
-            %input( type="email" name="email" id="id_email_2" required="true" )
-
-            %label( for="id_has_phone_2" class="checkbox-label" )
-              %input( type="checkbox" name="has_phone" id="id_has_phone_2" )
+            %label( for="id_has_phone_1" class="checkbox-label" )
+              %input( type="checkbox" name="has_phone" id="id_has_phone_1" )
               Мне можно позвонить
-            %input( type="text" name="phone" id="id_phone_2" placeholder="+7 (___) __-__-__" style="display: none" )
+            %input( type="text" name="phone" id="id_phone_1" placeholder="+7 (___) __-__-__" style="display: none" )
 
-            %input( type="submit" value="Отправить заявку" data-event="send-request" )
+            %input( type="submit" value="Получить расчет стоимости" data-event="send-request" )
             .done
-              %h3 Спасибо.<br>Ваш заказ принят.
-              %p Наш менеджер скоро<br>свяжется с Вами.
+              %h3 Спасибо.<br>Мы приняли вашу заявку.
+              %p Расчет стоимости скоро будет<br> у вас на почте.
               .close-popup Закрыть
     #callme
       .overlay
