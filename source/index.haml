@@ -3,7 +3,7 @@
   %head
     %meta( charset="utf-8" )
     %meta( name="viewport" content="height=device-height,width=device-width,initial-scale=1.0" )
-    %title Презентации под ключ в Rocketslides
+    %title Срочный дизайн презентаций в Rocketslides
     %link( rel="stylesheet" href="bundle.min.css" )
     %link( href="//cdnjs.cloudflare.com/ajax/libs/fotorama/4.4.9/fotorama.css" rel="stylesheet" )
     %script( src="//use.typekit.net/wsx3qoh.js" )
@@ -15,46 +15,53 @@
         #logo
         %nav
           %a( href="#portfolio" ) Портфолио
-          %a( href="#result" ) Методология
-          %a( href="#services" ) Стоимость
+          %a( href="#result" ) Гарантии
+          %a( href="#services" ) Тарифы
         .contact
-          .phone +7 964 624-65-23
-          .order-call( href="#order-call" data-name="из шапки" data-event="callback-header" ) Заказать звонок
+          .phone +7 (964) 624-65-23
+          .order-call( href="mailto:launch@rocketslides.ru" ) launch@rocketslides.ru
+          /.order-call( href="mailto:launch@rocketslides.ru" data-name="из шапки" data-event="callback-header" ) launch@rocketslides.ru
     #macbook
       .wrap
         .title
-          %h1 Создаём презентации<br>и шаблоны бизнес-класса
-          %h2 в PowerPoint, Keynote и Prezi
+          %h1 Дизайн и копирайтинг<br>презентаций за 24 часа
+          %h2 cо 100% гарантией сроков и качества
         %a.order( href="#order-presentation" data-name="первая кнопка" data-event="order-bigbutton" ) Рассчитать стоимость
     #info
       .wrap
         .title
-          %strong Бюро презентаций <br>Rocketslides — это:
+          %strong Бюро презентаций<br>Rocketslides — это:
         %ul
           %li
-            %h2 357
-            %h3 успешных<br>проектов
+            %h2 380
+            %h3 успешно сданных<br>презентаций
           %li
-            %h2 76<small></small>
-            %h3 корпоративных<br>клиентов
+            %h2 100%<small></small>
+            %h3 гарантия<br>надежности
           %li
-            %h2 24 <small>часа</small>
-            %h3 срок создания<br>срочной презентации
+            %h2 4 <small>часа</small>
+            %h3 на разработку<br>первой дизайн-версии
 
     #portfolio
       .wrap
         .left
-          %h1 Портфолио
+          %h1 Стоимость
           .list-wrapper
             %ul
-              %li Продающие презентации<br>для отправки по email
-              %li Презентации для публичных<br>выступлений
-              %li Питчи для инвесторов<br>
-              %li Маркетинг-киты для печати<br>
-              %li Корпоративные шаблоны<br>презентаций
+              %li Выставим смету и счёт<br> через 10 минут
+              %li Покажем лучшие работы<br>по вашей задаче
+              %li Подъедем на встречу<br>или созвонимся онлайн
+              %li Начнём работу<br>без предоплаты
+              %li Пришлем первую версию<br>уже через 3-4 часа
+              /%li Вышлем результат в PowerPoint<br>с исходниками графики
+              /%li Продающие презентации<br>для отправки по email
+              /%li Презентации для публичных<br>выступлений
+              /%li Питчи для инвесторов<br>
+              /%li Маркетинг-киты для печати<br>
+              /%li Все форматы: PowerPoint, <br>Keynote, Prezi
         .form-wrapper
           %form
-            %h3 Получите по email наши лучшие работы по вашей задаче
+            /%h3 Получите смету и наши лучшие работы по вашей задаче
 
             %label( for="id_type_1" ) Хочу заказать
             %select( name="type" required="true" id="id_type_1" )
@@ -64,94 +71,106 @@
             %label( for="id_reason_1" ) Для какой задачи
             %input( type="text" name="reason" id="id_reason_1" required="true" placeholder="для выступления" )
 
-            %label( for="id_email_1" ) Куда отправить работы
+            %label( for="id_email_1" ) Моя рабочая почта
             %input( type="email" name="email" id="id_email_1" required="true" placeholder="email@company.ru" )
+
+            %label( for="id_has_structure_1" class="checkbox-label" )
+              %input( type="checkbox" name="has_structure" id="id_has_structure_1" )
+              Структура презентации уже есть
 
             %label( for="id_has_phone_1" class="checkbox-label" )
               %input( type="checkbox" name="has_phone" id="id_has_phone_1" )
               Мне можно позвонить
             %input( type="text" name="phone" id="id_phone_1" placeholder="+7 (___) __-__-__" style="display: none" )
 
-            %input( type="submit" value="Получить портфолио" data-name="портфолио" data-event="get-portfolio" )
+            %input( type="submit" value="Рассчитать стоимость" data-name="портфолио" data-event="get-portfolio" )
 
-            %p
-              или
-              %a( href="#order-call" data-name="из портфолио" data-event="callback-header" ) заказать звонок
+            /%p
+            /  или
+            /  %a( href="#order-call" data-name="из портфолио" data-event="callback-header" ) заказать звонок
             .done
               %h3 Спасибо!<br>Ваш заказ принят.
               %p Наш менеджер в течение часа<br>свяжется с Вами.
     #result
       .wrap
-        %h1 Бизнес-результат неизбежен
-        %h3 Как мы делаем презентации эффективными
+        %h1 Как нам это удается
+        /%h3 Возвращаем предоплату, если что-то пошло не так
         %ul
           %li.diving
-            %h4 Погружение<br>в бизнес
+            %h4 Распределенная<br>команда
             %p
-              Презентации должны четко решать свою бизнес-задачу — именно поэтому мы тщательно изучаем то, как работает ваш бизнес, чтобы говорить в презентации «на языке» клиента.
+              30 человек, которые всегда онлайн, позволяют быстро масштабироваться под любую задачу, даже если у вас презентация на 80 слайдов
+            /%h4 Погружение<br>в бизнес
+            /%p
+            /  Презентации должны четко решать свою бизнес-задачу — именно поэтому мы тщательно изучаем то, как работает ваш бизнес, чтобы говорить в презентации «на языке» клиента.
           %li.structure
-            %h4 Продающая<br>структура
+            %h4 Параллельность<br>процессов
             %p
-              Сценарии наших презентаций создаются профессиональным режиссером презентаций — их уровень сразу же выделит вас на фоне конкурентов и замотивирует клиента на нужное действие!
+              Мы делим вашего «слона» на части и работаем одновременно в 6-8 рук, сокращая срок производства до минимума
+            /%h4 Продающая<br>структура
+            /%p
+            /  Сценарии наших презентаций создаются профессиональным режиссером презентаций — их уровень сразу же выделит вас на фоне конкурентов и замотивирует клиента на нужное действие!
           %li.design
-            %h4 Продуманный<br>дизайн
+            %h4 8 000 слайдов<br>опыта
             %p
-              В проектировании дизайна информации на слайдах закладывается обучающая методология, работающая на быстрое считывание и усвоение ключевых сообщений.
-    -#improve
-    -#  .wrap
-    -#    %h1 Не знаете, что именно можно улучшить<br>в ваших презентациях?
-    -#    %h3 Отправьте их к нам на бесплатный аудит и мы укажем на слабые места!
-    -#    %a.send( href="mailto:launch@rocketslides.ru") Отправить файл на e-mail
-    -# #reviews
-    -#   .wrap
-    -#     %h1 Реализованные кейсы
-    -#     %h3 Наши клиенты о результатах презентаций
-    -#     %ul.fotorama( data-width=998 data-autoplay=5000 data-click="false" data-loop="true" data-transitionduration=500 )
-    -#       %li( data-client="al" )
-    -#         .info
-    -#           %blockquote
-    -#             Ребята вывели наши презентации на новый уровень. Они не просто заложили фундамент стилю и подаче наших презентаций, а заправили новым топливом наш отдел по развитию бизнеса. <br><br>Результаты не заставили себя ждать.
-    -#           .person
-    -#             .name Роман Мандрик
-    -#             .position
-    -#               Генеральный директор<br>
-    -#               Action Learning
-    -#           %a.watch( href="#" ) посмотреть работу
-
+              Мы сделали за 3 года почти 400 презентаций, чтобы брать на себя ответственность за сроки и качество
+            /%h4 Продуманный<br>дизайн
+            /%p
+            /  В проектировании дизайна информации на слайдах закладывается обучающая методология, работающая на быстрое считывание и усвоение ключевых сообщений.
+    #improve
+      .wrap
+        %h1 Возвращаем 100% предоплаты,<br>если качество вас не устроит
+        %h3 Бессрочное предложение для всех новых проектов
+        %a.send( href="mailto:launch@rocketslides.ru" ) Написать письмо
+    /#reviews
+    /  .wrap
+    /    %h1 Нас рекомендуют
+        /%h3 Наши клиенты о результатах презентаций
+    /    %ul.fotorama( data-width=998 data-autoplay=5000 data-click="false" data-loop="true" data-transitionduration=500 )
+    /      %li( data-client="prostopreza" )
+    /        .info
+    /          %blockquote
+    /            Rocketslides — мои партнеры, которые делают лучшие презентации в Москве. Вместе мы работаем над некоторыми клиентскими проектами и работаем со спикерами TEDxSadovoeRing. Слайды, которые поставляет Вадим, выгодно отличают наших спикеров от всех остальных конференций — единым стилем, минимализмом, эффективностью.
+    /          .person
+    /            .name Глеб Шулишов
+    /            .position
+    /              Режиссер презентаций,<br>
+    /              тренер и коуч
+              /%a.watch( href="#" ) посмотреть работу
     #services
       .wrap
-        %h1 Что разрабатываем
+        %h1 Тарифы
         %ul
           %li.selling
-            %h3 Продающие презентации<br>и маркетинг-киты
-            %h4 от <strong>20</strong> тыс. рублей
-            %a.presentation( href="#order-presentation" data-name="продающие презентации" data-event="order-bigbutton" ) Заказать презентацию
-            %p
-              или
-              %a( href="#order-call" ta-name="из продающих презентаций" data-event="callback-header" ) заказать звонок
+            %h3 Презентация для печати<br>или отправки по email
+            %h4 от <strong>35</strong> тыс. рублей
+            %a.presentation( href="#order-presentation" data-name="продающие презентации" data-event="order-bigbutton" ) Рассчитать стоимость
+            /%p
+              /или
+              /%a( href="#order-call" ta-name="из продающих презентаций" data-event="callback-header" ) заказать звонок
           %li.public
-            %h3 Презентации<br>для публичных выступлений
-            %h4 от <strong>10</strong> тыс. рублей
-            %a.presentation( href="#order-presentation" data-name="публичные выступления" data-event="order-bigbutton" ) Заказать презентацию
-            %p
-              или
-              %a( href="#order-call" data-name="из публичных выступлений" data-event="callback-header" ) заказать звонок
-          %li.corporate
-            %h3 Корпоративные шаблоны<br>презентаций
+            %h3 Презентация<br>для выступления
             %h4 от <strong>25</strong> тыс. рублей
-            %a.presentation( href="#order-presentation" data-name="корпоративные шаблоны" data-event="order-template" ) Заказать шаблон
-            %p
-              или
-              %a( href="#order-call" data-name="из корпоративных шаблонов" data-event="callback-header" ) заказать звонок
+            %a.presentation( href="#order-presentation" data-name="публичные выступления" data-event="order-bigbutton" ) Рассчитать стоимость
+            /%p
+              /или
+              /%a( href="#order-call" data-name="из публичных выступлений" data-event="callback-header" ) заказать звонок
+          %li.corporate
+            %h3 Корпоративный шаблон<br>PowerPoint-презентаций
+            %h4 от <strong>40</strong> тыс. рублей
+            %a.presentation( href="#order-presentation" data-name="корпоративные шаблоны" data-event="order-template" ) Рассчитать стоимость
+            /%p
+              /или
+              /%a( href="#order-call" data-name="из корпоративных шаблонов" data-event="callback-header" ) заказать звонок
           %li.trainings
             %h3 Абонентское<br>обслуживание
-            %h4 от <strong>40</strong> тыс. руб./мес.
+            %h4 от <strong>80</strong> тыс. руб./мес.
             %a.presentation( href="#order-presentation" data-name="тренинги" data-event="order-terms" ) Обсудить условия
-            %p
-              или
-              %a( href="#order-call" data-name="из тренингов" data-event="callback-header") заказать звонок
-      -# %h2 Хотите добавить уникальности в ваши презентации?
-      -#  .tech Мы готовы сделать для вас впечатляющую презентацию в любом<br>прогрессивном формате!
+            /%p
+              /или
+              /%a( href="#order-call" data-name="из тренингов" data-event="callback-header") заказать звонок
+       /%h2 Хотите добавить уникальности в ваши презентации?
+        /.tech Мы готовы сделать для вас впечатляющую презентацию в любом<br>прогрессивном формате!
     #team
       .wrap
         %h1 Контакты
@@ -161,21 +180,22 @@
         -# %img( src="images/team2.jpg" )
         .block
           .info
-            .title На прямой связи с вами:<br>Вадим Михалев
-            .phone +7 964 624 65 23
+            /.title На прямой связи с вами:
+            %p Вадим Михалев
+            .phone <br>+7 (964) 624 65 23
             %a.email( href="mailto:launch@rocketslides.ru" ) launch@rocketslides.ru
             %p 125009, г. Москва,<br>ул. Тверская, д. 12. стр. 1
             .notice
               Звонок вас ни к чему не обязывает,<br>
-              мы с удовольствием расскажем<br>
+              я с удовольствием расскажу<br>
               о наших проектах и схеме работы
           %form
-            %h3 Остались вопросы или<br>хотите связаться с нами напрямую?
-            %p Воспользуйтесь контактной формой ниже
-            %input( type="text" name="name" placeholder="Ваше имя" required="true" )
+            %h3 Если остались вопросы<br>
+            %p Напишите нам на launch@rocketslides.ru<br>или заполните форму:
+            /%input( type="text" name="name" placeholder="Ваше имя" required="true" )
             %input( type="email" name="email" placeholder="Email" required="false" )
             %input( type="text" name="phone" placeholder="+7 (___) __-__-__" required="true" )
-            %textarea( name="message" placeholder="Ваш вопрос или описание задачи на расчет стоимости" )
+            %textarea( name="message" placeholder="Ваше сообщение или вопрос" )
             %input( type="submit" value="Отправить сообщение" data-name="остались вопросы" data-event="message" )
             .done
               %h3 Спасибо!<br>Ваш заказ принят.
@@ -187,9 +207,9 @@
         .inner
           .close
           .info
-            %p Делаем расчет стоимости<br>проекта в течение<br><strong>30 минут</strong>
-            %p Если задача срочная,<br>срок разработки — <br><strong>от 12 часов</strong>
-            %p Если у вас срочный запрос,<br>звоните сразу по телефону<br><strong>+7 964 624 65 23</strong>
+            %p Делаем расчет стоимости<br>в течение<br><strong>15 минут</strong>
+            %p Срок разработки —<br><strong>от 12 часов</strong>
+            %p Если у вас вопросы,<br>свяжитесь с нами по номеру<br><strong>+7 964 624 65 23</strong>
           %form
             %label( for="id_type_1" ) Хочу заказать
             %select( name="type" required="true" id="id_type_1" )
@@ -202,7 +222,7 @@
             %label( for="id_when_1" ) К какому сроку
             %input( type="text" name="when" id="id_when_1" required="true" placeholder="к утру" )
 
-            %label( for="id_email_1" ) Куда отправить смету
+            %label( for="id_email_1" ) Моя рабочая почта
             %input( type="email" name="email" id="id_email_1" required="true" placeholder="email@company.ru" )
 
             %label( for="id_has_structure_1" class="checkbox-label" )
