@@ -166,7 +166,7 @@ input[type="text"], input[type="email"], textarea, select
     display flex
     justify-content space-between
     align-items center
-  a
+  a:not(.order-call)
     color #bebebe
     text-decoration none
     text-transform uppercase
@@ -280,12 +280,15 @@ input[type="text"], input[type="email"], textarea, select
     box-sizing border-box
     padding 0 70px 0 122px
     display flex
+    flex-direction column
     align-items stretch
+  .inner-wrap
+    display flex
+    margin-top 65px
   .left
     flex-grow 1
     display flex
     flex-direction column
-    padding-bottom 100px
   .list-wrapper
     flex-grow 1
     display flex
