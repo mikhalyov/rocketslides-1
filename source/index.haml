@@ -138,7 +138,7 @@
             %h4 от <strong>25</strong> тыс. рублей
             %a.presentation( href="#order-presentation" data-name="публичные выступления" data-event="order-bigbutton" ) Рассчитать стоимость
             /%p или
-              /%a( href="#order-call" data-name="из публичных выступлений" data-event="callback-header" ) заказать звонок
+              %a( href="#order-call" data-name="из публичных выступлений" data-event="callback-header" ) заказать звонок
           %li.corporate
             %h3 Корпоративный шаблон<br>PowerPoint-презентаций
             %h4 от <strong>40</strong> тыс. рублей
@@ -212,9 +212,9 @@
               Структура презентации уже есть
 
             %label( for="id_has_phone_1" class="checkbox-label" )
-              %input( type="checkbox" name="has_phone" id="id_has_phone_1" )
+              %input( type="checkbox" name="has_phone" id="id_has_phone_2" )
               Мне можно позвонить
-            %input( type="text" name="phone" id="id_phone_1" placeholder="+7 (___) __-__-__" style="display: none" )
+            %input( type="text" name="phone" id="id_phone_2" placeholder="+7 (___) __-__-__" style="display: none" )
 
             %input( type="submit" value="Получить расчет стоимости" data-event="send-request" )
             .done
